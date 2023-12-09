@@ -7,8 +7,11 @@ using TMPro;
 public class ScoreManager : MonoBehaviour
 {
     public TextMeshProUGUI scoreText;
+    public TextMeshProUGUI coinsText;
     public TextMeshProUGUI highScoreText;
 
+    public int coinCount;
+    public int highCoinCount;
     public float scoreCount;
     public float highScoreCount;
 
@@ -23,6 +26,11 @@ public class ScoreManager : MonoBehaviour
         if(PlayerPrefs.HasKey("HighScore"))
         {
             highScoreCount = PlayerPrefs.GetFloat("HighScore");
+        }
+
+        if (PlayerPrefs.HasKey("HighCoin"))
+        {
+            highCoinCount = PlayerPrefs.GetInt("HighCoin");
         }
     }
 
@@ -41,8 +49,24 @@ public class ScoreManager : MonoBehaviour
          
         }
 
+        if(coinCount == 2)
+        {
+            highCoinCount += coinCount;
+            PlayerPrefs.SetInt("HighCoin", highCoinCount);
+            coinCount = 0;
+        }
+        
+       
+
+
         //rounds decimal value (mathf.round(scorecount)
         scoreText.text = "Score: " + Mathf.Round(scoreCount);
         highScoreText.text = "High Score: " + Mathf.Round(highScoreCount);
+        coinsText.text = "Coins: " + highCoinCount;
+    }
+
+    public void AddScore(int pointsToAdd)
+    {
+        coinCount += pointsToAdd;
     }
 }
