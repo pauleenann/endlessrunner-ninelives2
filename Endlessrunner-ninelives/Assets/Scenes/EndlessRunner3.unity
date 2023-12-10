@@ -1663,7 +1663,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pooledObject: {fileID: 7400071710359106930, guid: 03401f9adb97d2d4a9e57a5e6148ee93, type: 3}
-  pooledAmount: 15
+  pooledAmount: 20
 --- !u!1 &1415208612
 GameObject:
   m_ObjectHideFlags: 0
@@ -1963,6 +1963,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1954780218}
+  - component: {fileID: 1954780219}
   m_Layer: 0
   m_Name: CoinGenerator
   m_TagString: Untagged
@@ -1986,6 +1987,20 @@ Transform:
   - {fileID: 1400906008}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1954780219
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1954780217}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0de1ee8ab849dd4097740bcd3b74a6e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  coinPool: {fileID: 1400906009}
+  distanceBetweenCoins: 1
 --- !u!1 &1966886313
 GameObject:
   m_ObjectHideFlags: 0
