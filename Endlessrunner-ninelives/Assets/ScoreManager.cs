@@ -15,9 +15,11 @@ public class ScoreManager : MonoBehaviour
     public float scoreCount;
     public float highScoreCount;
 
+
     public float pointsPerSecond;
 
     public bool scoreIncreasing;
+
     
     // Start is called before the first frame update
     void Start()
@@ -55,7 +57,6 @@ public class ScoreManager : MonoBehaviour
             PlayerPrefs.SetInt("HighCoin", highCoinCount);
             coinCount = 0;
         }
-        
        
 
 
