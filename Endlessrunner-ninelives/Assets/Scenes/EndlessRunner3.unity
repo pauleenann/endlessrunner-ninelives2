@@ -2075,6 +2075,7 @@ MonoBehaviour:
   - {fileID: 535301269}
   maxHeighPoint: {fileID: 37732764}
   maxHeightChange: 2
+  randomCoin: 60
 --- !u!4 &1997900677
 Transform:
   m_ObjectHideFlags: 0
