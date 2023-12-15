@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 
 public class GameManager : MonoBehaviour
@@ -8,6 +9,9 @@ public class GameManager : MonoBehaviour
     public Transform platformGenerator;
     private Vector3 platformStartPoint;
 
+    public TextMeshProUGUI livesText;
+    public int totalLivesLeft;
+    public int maxLives = 9;
 
     public PlayerController thePlayer;
     private Vector3 playerStartPoint;
@@ -17,6 +21,8 @@ public class GameManager : MonoBehaviour
     private ScoreManager theScoreManager;
 
     public DeathMenu deathScreen;
+
+
 
 
     // Start is called before the first frame update
@@ -35,19 +41,24 @@ public class GameManager : MonoBehaviour
 
     public void RestartGame()
     {
-        //stops scoring
-        theScoreManager.scoreIncreasing = false;
-        //player object will be inactive
-        thePlayer.gameObject.SetActive(false);
-        ////coroutine - runs by itself; you add som time delays
-        //StartCoroutine("RestartGameCo");
-        deathScreen.gameObject.SetActive(true);
-
+        if(maxLives > 0)
+        {
+            maxLives--;
+            //stops scoring
+            theScoreManager.scoreIncreasing = false;
+            //player object will be inactive
+            thePlayer.gameObject.SetActive(false);
+            ////coroutine - runs by itself; you add som time delays
+            //StartCoroutine("RestartGameCo");
+            deathScreen.gameObject.SetActive(true);
+        }
     }
 
     public void Reset()
     {
+
         deathScreen.gameObject.SetActive(false);
+        livesText.text = "Lives: " + maxLives;
         platformList = FindObjectsOfType<PlatformDestroyer>();
 
         for (int i = 0; i < platformList.Length; i++)
