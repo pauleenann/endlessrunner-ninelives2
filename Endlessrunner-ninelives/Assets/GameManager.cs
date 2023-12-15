@@ -8,6 +8,7 @@ public class GameManager : MonoBehaviour
 {
     public Transform platformGenerator;
     private Vector3 platformStartPoint;
+    private Vector3 platformLastPoint;
 
     public TextMeshProUGUI livesText;
     public int totalLivesLeft;
@@ -22,6 +23,7 @@ public class GameManager : MonoBehaviour
 
     public DeathMenu deathScreen;
 
+    public GameObject resumeScreen;
 
 
 
@@ -41,8 +43,10 @@ public class GameManager : MonoBehaviour
 
     public void RestartGame()
     {
+
         if(maxLives > 0)
         {
+          
             maxLives--;
             //stops scoring
             theScoreManager.scoreIncreasing = false;
@@ -50,14 +54,24 @@ public class GameManager : MonoBehaviour
             thePlayer.gameObject.SetActive(false);
             ////coroutine - runs by itself; you add som time delays
             //StartCoroutine("RestartGameCo");
+
+            //deathScreen.gameObject.SetActive(true);
+            resumeScreen.gameObject.SetActive(true);
+        }
+        else
+        {
             deathScreen.gameObject.SetActive(true);
         }
+        
+        
     }
 
     public void Reset()
     {
 
-        deathScreen.gameObject.SetActive(false);
+
+        //deathScreen.gameObject.SetActive(false);
+        
         livesText.text = "Lives: " + maxLives;
         platformList = FindObjectsOfType<PlatformDestroyer>();
 
