@@ -1,13 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using TMPro;
+
 
 public class GameManager : MonoBehaviour
 {
     public Transform platformGenerator;
     private Vector3 platformStartPoint;
-    
 
 
     public PlayerController thePlayer;
