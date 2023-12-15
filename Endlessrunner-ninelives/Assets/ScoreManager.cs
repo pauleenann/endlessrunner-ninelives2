@@ -9,7 +9,10 @@ public class ScoreManager : MonoBehaviour
     public TextMeshProUGUI scoreText;
     public TextMeshProUGUI coinsText;
     public TextMeshProUGUI highScoreText;
+    public TextMeshProUGUI fishText;
 
+    public int fishCount;
+    public int highFishCount;
     public int coinCount;
     public int highCoinCount;
     public float scoreCount;
@@ -33,6 +36,11 @@ public class ScoreManager : MonoBehaviour
         if (PlayerPrefs.HasKey("HighCoin"))
         {
             highCoinCount = PlayerPrefs.GetInt("HighCoin");
+        }
+
+        if (PlayerPrefs.HasKey("HighFish"))
+        {
+            highFishCount = PlayerPrefs.GetInt("HighFish");
         }
     }
 
@@ -58,16 +66,27 @@ public class ScoreManager : MonoBehaviour
             coinCount = 0;
         }
        
-
+        if(fishCount > 0)
+        {
+            highFishCount += fishCount;
+            PlayerPrefs.SetInt("HighFish", highFishCount);
+            fishCount = 0;
+        }
 
         //rounds decimal value (mathf.round(scorecount)
         scoreText.text = "Score: " + Mathf.Round(scoreCount);
         highScoreText.text = "High Score: " + Mathf.Round(highScoreCount);
         coinsText.text = "Coins: " + highCoinCount;
+        fishText.text = "Fish: " + highFishCount;
     }
 
     public void AddScore(int pointsToAdd)
     {
         coinCount += pointsToAdd;
+    }
+
+    public void AddFish(int fishToAdd)
+    {
+        fishCount += fishToAdd;
     }
 }
