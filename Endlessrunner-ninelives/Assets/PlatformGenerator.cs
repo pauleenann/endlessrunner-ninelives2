@@ -27,9 +27,15 @@ public class PlatformGenerator : MonoBehaviour
 
     public float maxHeightChange;
     private float heightChange;
-    public float randomCoin;
+    //public float randomCoin;
 
     private CoinGenerator theCoinGenerator;
+    private FishGenerator theFishGenerator;
+
+    private int randomCoinSpawn;
+    private int randomFishSpawn;
+    public int randomizer;
+
     void Start()
     {
         //platformWidth = thePlatform.GetComponent<BoxCollider2D>().size.x;
@@ -46,6 +52,8 @@ public class PlatformGenerator : MonoBehaviour
         maxHeight = maxHeighPoint.position.y;
 
         theCoinGenerator = FindObjectOfType<CoinGenerator>();
+        theFishGenerator = FindObjectOfType<FishGenerator>();
+        randomizer = Random.Range(61, 100);
 
     }
 
@@ -83,12 +91,19 @@ public class PlatformGenerator : MonoBehaviour
             newPlatform.transform.rotation = transform.rotation;
             newPlatform.SetActive(true);
 
+            int randomSpawn = Random.Range(0, 100);
 
-            if(Random.Range(0f, 100f) < randomCoin)
+            if (randomSpawn < randomizer)
             {
+                // Spawn coin
                 theCoinGenerator.SpawnCoins(new Vector3(transform.position.x, transform.position.y + 9.7f, transform.position.z));
             }
-            
+            else
+            {
+                // Spawn fish
+                theFishGenerator.SpawnFish(new Vector3(transform.position.x, transform.position.y + 9.7f, transform.position.z));
+            }
+
 
             transform.position = new Vector3(transform.position.x + (platformWidths[platformSelector]/2), transform.position.y, transform.position.z);
         }

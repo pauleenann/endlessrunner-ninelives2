@@ -11,7 +11,7 @@ public class FishGenerator : MonoBehaviour
     public void SpawnFish(Vector3 startPosition)
     {
         GameObject fish = fishPool.GetPooledObject();
-        fish.transform.position = startPosition;
+        fish.transform.position = new Vector3(startPosition.x, startPosition.y - 1f , startPosition.z);
         fish.SetActive(true);
     }
 }

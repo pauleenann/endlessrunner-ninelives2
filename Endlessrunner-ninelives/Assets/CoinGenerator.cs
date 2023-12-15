@@ -12,7 +12,7 @@ public class CoinGenerator : MonoBehaviour
     public void SpawnCoins(Vector3 startPosition)
     {
         GameObject coin1 = coinPool.GetPooledObject();
-        coin1.transform.position = startPosition;
+        coin1.transform.position = new Vector3(startPosition.x, startPosition.y, startPosition.z);
         coin1.SetActive(true);
 
         GameObject coin2 = coinPool.GetPooledObject();
