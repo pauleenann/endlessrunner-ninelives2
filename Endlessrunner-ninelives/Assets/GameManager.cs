@@ -7,6 +7,8 @@ public class GameManager : MonoBehaviour
 {
     public Transform platformGenerator;
     private Vector3 platformStartPoint;
+    
+
 
     public PlayerController thePlayer;
     private Vector3 playerStartPoint;
@@ -17,8 +19,6 @@ public class GameManager : MonoBehaviour
 
     public DeathMenu deathScreen;
 
-    public TextMeshProUGUI livesText;
-    public int totalLives = 9;
 
     // Start is called before the first frame update
     void Start()
@@ -26,7 +26,6 @@ public class GameManager : MonoBehaviour
         platformStartPoint = platformGenerator.position;
         playerStartPoint = thePlayer.transform.position;
         theScoreManager = FindObjectOfType<ScoreManager>();
-
     }
 
     // Update is called once per frame
@@ -35,27 +34,20 @@ public class GameManager : MonoBehaviour
         
     }
 
-    //get called kapag namatay
     public void RestartGame()
     {
-        ////coroutine - runs by itself; you add som time delays
-        //StartCoroutine("RestartGameCo");
-
         //stops scoring
         theScoreManager.scoreIncreasing = false;
         //player object will be inactive
         thePlayer.gameObject.SetActive(false);
-
+        ////coroutine - runs by itself; you add som time delays
+        //StartCoroutine("RestartGameCo");
         deathScreen.gameObject.SetActive(true);
-        totalLives--;
-        livesText.text = "Lives: " + totalLives;
 
     }
 
     public void Reset()
     {
-        //turn off death menu
-        deathScreen.gameObject.SetActive(false);
         platformList = FindObjectsOfType<PlatformDestroyer>();
 
         for (int i = 0; i < platformList.Length; i++)
