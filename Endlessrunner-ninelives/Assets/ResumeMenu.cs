@@ -32,5 +32,6 @@ public class ResumeMenu : MonoBehaviour
     {
         Time.timeScale = 1f;
         resumeMenu.SetActive(false);
+        FindObjectOfType<GameManager>().Resume();
     }
 }

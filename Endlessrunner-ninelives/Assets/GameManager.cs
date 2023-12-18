@@ -9,6 +9,9 @@ public class GameManager : MonoBehaviour
     public Transform platformGenerator;
     private Vector3 platformStartPoint;
     private Vector3 platformLastPoint;
+    //private Vector3 resumePoint;
+
+    private CameraController resumePoint;
 
     public TextMeshProUGUI livesText;
     public int totalLivesLeft;
@@ -87,6 +90,18 @@ public class GameManager : MonoBehaviour
 
         theScoreManager.scoreCount = 0;
         theScoreManager.scoreIncreasing = true;
+    }
+
+    public void Resume()
+    {
+        //maxLives--;
+        livesText.text = "Lives: " + maxLives;
+
+        // Find the Main Camera
+        Camera mainCamera = Camera.main;
+        Debug.Log("Main Camera X Position: " + mainCamera.transform.position.x);
+        thePlayer.transform.position = new Vector3(mainCamera.transform.position.x - 6f, transform.position.y + 9f, transform.position.z);
+        thePlayer.gameObject.SetActive(true);
     }
 
     /*public IEnumerator RestartGameCo()
