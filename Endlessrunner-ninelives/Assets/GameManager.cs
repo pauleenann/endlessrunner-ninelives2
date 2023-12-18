@@ -9,9 +9,6 @@ public class GameManager : MonoBehaviour
     public Transform platformGenerator;
     private Vector3 platformStartPoint;
     private Vector3 platformLastPoint;
-    //private Vector3 resumePoint;
-
-    private CameraController resumePoint;
 
     public TextMeshProUGUI livesText;
     public int totalLivesLeft;
@@ -46,7 +43,6 @@ public class GameManager : MonoBehaviour
 
     public void RestartGame()
     {
-
         if(maxLives > 0)
         {
           
@@ -101,6 +97,7 @@ public class GameManager : MonoBehaviour
         Camera mainCamera = Camera.main;
         Debug.Log("Main Camera X Position: " + mainCamera.transform.position.x);
         thePlayer.transform.position = new Vector3(mainCamera.transform.position.x - 6f, transform.position.y + 9f, transform.position.z);
+        theScoreManager.scoreIncreasing = true;
         thePlayer.gameObject.SetActive(true);
     }
 
