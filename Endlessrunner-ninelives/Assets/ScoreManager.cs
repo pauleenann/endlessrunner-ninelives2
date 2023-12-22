@@ -74,10 +74,10 @@ public class ScoreManager : MonoBehaviour
         }
 
         //rounds decimal value (mathf.round(scorecount)
-        scoreText.text = "Score: " + Mathf.Round(scoreCount);
-        highScoreText.text = "High Score: " + Mathf.Round(highScoreCount);
-        coinsText.text = "Coins: " + highCoinCount;
-        fishText.text = "Fish: " + highFishCount;
+        scoreText.text = Mathf.Round(scoreCount) + "M";
+        highScoreText.text = "BEST: " + Mathf.Round(highScoreCount) + "M";
+        coinsText.text = ""+highCoinCount;
+        fishText.text = "" + highFishCount;
     }
 
     public void AddScore(int pointsToAdd)

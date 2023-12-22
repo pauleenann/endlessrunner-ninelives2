@@ -111,7 +111,7 @@ public class PlayerController : MonoBehaviour
     }
 
     //when one object with collider touches one box collider
-    //
+    //kapag nahulog ung player
     void OnCollisionEnter2D(Collision2D other)
     {
         if(other.gameObject.tag == "killbox")
