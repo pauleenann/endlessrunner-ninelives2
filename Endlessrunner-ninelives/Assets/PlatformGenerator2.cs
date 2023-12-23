@@ -50,6 +50,7 @@ public class PlatformGenerator2 : MonoBehaviour
         //platform height
         minHeight = transform.position.y;
         maxHeight = maxHeighPoint.position.y;
+        //platformgenerator is the minheigt
         Debug.Log(minHeight);
         Debug.Log(maxHeight);
 
