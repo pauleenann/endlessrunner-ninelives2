@@ -1,12 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using System.Collections.Generic;
 
 public class ObjectPooler : MonoBehaviour
 {
     public GameObject pooledObject;
+    //number of objects na iinitiate once game is played
     public int pooledAmount;
+    //list of gameobjects; 
     List<GameObject> pooledObjects;
     
     // Start is called before the first frame update
@@ -14,10 +15,13 @@ public class ObjectPooler : MonoBehaviour
     {
         pooledObjects = new List<GameObject>();
 
+
         for(int i = 0; i < pooledAmount; i++)
         {
+            //converts instantiated object to game object
             GameObject obj = (GameObject)Instantiate(pooledObject);
             obj.SetActive(false);
+            //add object to list
             pooledObjects.Add(obj);
         }
     }
