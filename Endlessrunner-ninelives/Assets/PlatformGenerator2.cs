@@ -15,26 +15,39 @@ public class PlatformGenerator2 : MonoBehaviour
     public float distanceBetweenMax;
 
     private int platformSelector;
-    public GameObject[] thePlatforms;
+    //public GameObject[] thePlatforms;
     private float[] platformWidths;
 
-    //public ObjectPooler theObjectPool;
+    public ObjectPooler[] theObjectPools;
+
+    //height of the platformgenerator
+    private float minHeight;
+    public Transform maxHeightPoint;
+    private float maxHeight;
+    public float maxHeightChange;
+    private float heightChange;
 
 
     // Start is called before the first frame update
     void Start()
     {
         //how wide our platform is
-        //platformWidth = thePlatform.GetComponent<PolygonCollider2D>().bounds.size.x;
-        platformWidths = new float[thePlatforms.Length];
+        //platformWidth = theObjectPool.GetComponent<PolygonCollider2D>().bounds.size.x;
+        platformWidths = new float[theObjectPools.Length];
         Debug.Log(transform.position.x);
-        Debug.Log(thePlatforms.Length);
+        //Debug.Log(thePlatforms.Length);
 
-        for (int i = 0; i < thePlatforms.Length; i++)
+        //platformwidth does not have a value yet idk why
+        for (int i = 0; i < theObjectPools.Length; i++)
         {
-            platformWidths[i] = thePlatforms[i].GetComponent<PolygonCollider2D>().bounds.size.x;
-            Debug.Log("platformwidth "+ i+ " " + platformWidths[i]);
+            platformWidths[i] = theObjectPools[i].pooledObject.GetComponent<PolygonCollider2D>().bounds.size.x;
+            
         }
+
+        //kung saan nakalagay ung platform generator
+        minHeight = transform.position.y;
+        //position.y ng maxheightpoiunt
+        maxHeight = maxHeightPoint.position.y;
     }
 
     // Update is called once per frame
@@ -48,22 +61,28 @@ public class PlatformGenerator2 : MonoBehaviour
             distanceBetween = Random.Range(distanceBetweenMin, distanceBetweenMax);
             Debug.Log("distance between: " + distanceBetween);
 
-            platformSelector = Random.Range(0, thePlatforms.Length);
+            platformSelector = Random.Range(0, theObjectPools.Length);
+            
+            Debug.Log("plwidth: " + platformWidths[platformSelector]);
+
+            heightChange = transform.position.y + Random.Range(maxHeightChange, -maxHeightChange);
             //new transform.position ng platformgenerator
-            Debug.Log(platformWidths[platformSelector]);
-            transform.position = new Vector3(transform.position.x + platformWidths[platformSelector] + distanceBetween, transform.position.y, transform.position.z);
+            transform.position = new Vector3(transform.position.x + (platformWidths[platformSelector]/2) + distanceBetween, heightChange, transform.position.z);
+            Debug.Log("pw+db: " + ((platformWidths[platformSelector] / 2) + distanceBetween));
             Debug.Log(transform.position);
 
 
-            Instantiate(/*thePlatform*/thePlatforms[platformSelector], transform.position, transform.rotation);
+            //Instantiate(/*thePlatform*/thePlatforms[platformSelector], transform.position, transform.rotation);
 
 
 
-            /*GameObject newPlatform = theObjectPool.GetPooledObject();
+            GameObject newPlatform = theObjectPools[platformSelector].GetPooledObject();
 
             newPlatform.transform.position = transform.position;
             newPlatform.transform.rotation = transform.rotation;
-            newPlatform.SetActive(true);*/
+            newPlatform.SetActive(true);
+
+            transform.position = new Vector3(transform.position.x + (platformWidths[platformSelector] / 2), heightChange, transform.position.z);
         }
     }
 }
