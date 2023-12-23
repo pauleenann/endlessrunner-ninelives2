@@ -28,10 +28,12 @@ public class PlatformGenerator2 : MonoBehaviour
         //platformWidth = thePlatform.GetComponent<PolygonCollider2D>().bounds.size.x;
         platformWidths = new float[thePlatforms.Length];
         Debug.Log(transform.position.x);
+        Debug.Log(thePlatforms.Length);
 
         for (int i = 0; i < thePlatforms.Length; i++)
         {
             platformWidths[i] = thePlatforms[i].GetComponent<PolygonCollider2D>().bounds.size.x;
+            Debug.Log("platformwidth "+ i+ " " + platformWidths[i]);
         }
     }
 
@@ -44,11 +46,13 @@ public class PlatformGenerator2 : MonoBehaviour
         {
             //pick number between distanceBetweenMin and Max
             distanceBetween = Random.Range(distanceBetweenMin, distanceBetweenMax);
+            Debug.Log("distance between: " + distanceBetween);
 
             platformSelector = Random.Range(0, thePlatforms.Length);
             //new transform.position ng platformgenerator
+            Debug.Log(platformWidths[platformSelector]);
             transform.position = new Vector3(transform.position.x + platformWidths[platformSelector] + distanceBetween, transform.position.y, transform.position.z);
-
+            Debug.Log(transform.position);
 
 
             Instantiate(/*thePlatform*/thePlatforms[platformSelector], transform.position, transform.rotation);
