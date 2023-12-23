@@ -50,6 +50,8 @@ public class PlatformGenerator2 : MonoBehaviour
         //platform height
         minHeight = transform.position.y;
         maxHeight = maxHeighPoint.position.y;
+        Debug.Log(minHeight);
+        Debug.Log(maxHeight);
 
         theCoinGenerator = FindObjectOfType<CoinGenerator>();
         theFishGenerator = FindObjectOfType<FishGenerator>();
@@ -77,8 +79,10 @@ public class PlatformGenerator2 : MonoBehaviour
             {
                 heightChange = minHeight;
             }
-            Debug.Log("Min: " +minHeight);
-            Debug.Log("Max: "+heightChange);
+            //Debug.Log("maxheightpoint: " + maxHeighPoint.position.y);
+            //Debug.Log("max: " + maxHeight);
+            //Debug.Log("Min: " +minHeight);
+            //Debug.Log("heightChange: "+heightChange);
             //transform.position = new Vector3(transform.position.x + platformWidth + distanceBetween, transform.position.y, transform.position.z);
             transform.position = new Vector3(transform.position.x + (platformWidths[platformSelector] / 2) + distanceBetween, heightChange, transform.position.z);
 
