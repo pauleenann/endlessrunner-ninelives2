@@ -22,11 +22,14 @@ public class PlatformGenerator3 : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //transform.position = transform.position kung saan nakaattach tong scriptna to
+        //transform.position = transform.position kung saan nakaattach tong script na to
+        //the generationpoint holds holds the transform value ng object na nakaattach sa kanya
         if(transform.position.x < generationPoint.position.x)
         {
-            transform.position = new Vector3(transform.position.x + platformWidth + distanceBetween, transform.position.y,transform.position.z);
+            //new transform.position ng platformgenerator
+            
             Instantiate(thePlatform, transform.position, transform.rotation);
+            transform.position = new Vector3(transform.position.x + platformWidth + distanceBetween, transform.position.y,transform.position.z);
         }
     }
 }
