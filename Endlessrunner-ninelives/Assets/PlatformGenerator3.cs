@@ -11,6 +11,9 @@ public class PlatformGenerator3 : MonoBehaviour
     //measures platform width
     private float platformWidth;
 
+    public float distanceBetweenMin;
+    public float distanceBetweenMax;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -26,10 +29,11 @@ public class PlatformGenerator3 : MonoBehaviour
         //the generationpoint holds holds the transform value ng object na nakaattach sa kanya
         if(transform.position.x < generationPoint.position.x)
         {
+            //pick number between distanceBetweenMin and Max
+            distanceBetween = Random.Range(distanceBetweenMin, distanceBetweenMax);
             //new transform.position ng platformgenerator
-            
-            Instantiate(thePlatform, transform.position, transform.rotation);
             transform.position = new Vector3(transform.position.x + platformWidth + distanceBetween, transform.position.y,transform.position.z);
+            Instantiate(thePlatform, transform.position, transform.rotation);
         }
     }
 }
