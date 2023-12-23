@@ -77,7 +77,8 @@ public class PlatformGenerator2 : MonoBehaviour
             {
                 heightChange = minHeight;
             }
-
+            Debug.Log("Min: " +minHeight);
+            Debug.Log("Max: "+heightChange);
             //transform.position = new Vector3(transform.position.x + platformWidth + distanceBetween, transform.position.y, transform.position.z);
             transform.position = new Vector3(transform.position.x + (platformWidths[platformSelector] / 2) + distanceBetween, heightChange, transform.position.z);
 
