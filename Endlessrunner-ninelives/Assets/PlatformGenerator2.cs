@@ -2,116 +2,64 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-
 public class PlatformGenerator2 : MonoBehaviour
 {
-    //creates an gameobject array
     public GameObject thePlatform;
     public Transform generationPoint;
     public float distanceBetween;
 
+    //measures platform width
     private float platformWidth;
 
     public float distanceBetweenMin;
     public float distanceBetweenMax;
 
-    //public GameObject[] thePlatforms;
     private int platformSelector;
+    public GameObject[] thePlatforms;
     private float[] platformWidths;
 
-    public ObjectPooler[] theObjectPools;
+    //public ObjectPooler theObjectPool;
 
-    private float minHeight;
-    public Transform maxHeighPoint;
-    private float maxHeight;
 
-    public float maxHeightChange;
-    private float heightChange;
-    //public float randomCoin;
-
-    private CoinGenerator theCoinGenerator;
-    private FishGenerator theFishGenerator;
-
-    private int randomCoinSpawn;
-    private int randomFishSpawn;
-    public int randomizer;
-
+    // Start is called before the first frame update
     void Start()
     {
-        //platformWidth = thePlatform.GetComponent<BoxCollider2D>().size.x;
+        //how wide our platform is
+        //platformWidth = thePlatform.GetComponent<PolygonCollider2D>().bounds.size.x;
+        platformWidths = new float[thePlatforms.Length];
+        Debug.Log(transform.position.x);
 
-        platformWidths = new float[theObjectPools.Length];
-
-        for (int i = 0; i < theObjectPools.Length; i++)
+        for (int i = 0; i < thePlatforms.Length; i++)
         {
-            platformWidths[i] = theObjectPools[i].pooledObject.GetComponent<PolygonCollider2D>().bounds.size.x;
+            platformWidths[i] = thePlatforms[i].GetComponent<PolygonCollider2D>().bounds.size.x;
         }
-
-        //platform height
-        minHeight = transform.position.y;
-        maxHeight = maxHeighPoint.position.y;
-        //platformgenerator is the minheigt
-        Debug.Log(minHeight);
-        Debug.Log(maxHeight);
-
-        theCoinGenerator = FindObjectOfType<CoinGenerator>();
-        theFishGenerator = FindObjectOfType<FishGenerator>();
-        randomizer = Random.Range(61, 100);
-
     }
 
     // Update is called once per frame
     void Update()
     {
+        //transform.position = transform.position kung saan nakaattach tong script na to
+        //the generationpoint holds holds the transform value ng object na nakaattach sa kanya
         if (transform.position.x < generationPoint.position.x)
         {
+            //pick number between distanceBetweenMin and Max
             distanceBetween = Random.Range(distanceBetweenMin, distanceBetweenMax);
 
-            platformSelector = Random.Range(0, theObjectPools.Length);
+            platformSelector = Random.Range(0, thePlatforms.Length);
+            //new transform.position ng platformgenerator
+            transform.position = new Vector3(transform.position.x + platformWidths[platformSelector] + distanceBetween, transform.position.y, transform.position.z);
 
-            heightChange = transform.position.y + Random.Range(maxHeightChange, -maxHeightChange);
 
 
-            if (heightChange > maxHeight)
-            {
-                heightChange = maxHeight;
-            }
-            else if (heightChange < minHeight)
-            {
-                heightChange = minHeight;
-            }
-            //Debug.Log("maxheightpoint: " + maxHeighPoint.position.y);
-            //Debug.Log("max: " + maxHeight);
-            //Debug.Log("Min: " +minHeight);
-            //Debug.Log("heightChange: "+heightChange);
-            //transform.position = new Vector3(transform.position.x + platformWidth + distanceBetween, transform.position.y, transform.position.z);
-            transform.position = new Vector3(transform.position.x + (platformWidths[platformSelector] / 2) + distanceBetween, heightChange, transform.position.z);
+            Instantiate(/*thePlatform*/thePlatforms[platformSelector], transform.position, transform.rotation);
 
-            //copies an existing object
-            //3 values         
-            //Instantiate(/*thePlatform*/thePlatforms[platformSelector], transform.position, transform.rotation);
 
-            GameObject newPlatform = theObjectPools[platformSelector].GetPooledObject();
+
+            /*GameObject newPlatform = theObjectPool.GetPooledObject();
 
             newPlatform.transform.position = transform.position;
             newPlatform.transform.rotation = transform.rotation;
-            newPlatform.SetActive(true);
-
-            int randomSpawn = Random.Range(0, 100);
-
-            if (randomSpawn < randomizer)
-            {
-                // Spawn coin
-                theCoinGenerator.SpawnCoins(new Vector3(transform.position.x, transform.position.y + 9.7f, transform.position.z));
-            }
-            else
-            {
-                // Spawn fish
-                theFishGenerator.SpawnFish(new Vector3(transform.position.x, transform.position.y + 9.7f, transform.position.z));
-            }
-
-
-            transform.position = new Vector3(transform.position.x + (platformWidths[platformSelector] / 2), transform.position.y, transform.position.z);
+            newPlatform.SetActive(true);*/
         }
     }
 }

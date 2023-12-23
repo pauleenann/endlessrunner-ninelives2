@@ -439,9 +439,11 @@ MonoBehaviour:
   thePlatform: {fileID: 832161168799823042, guid: 88ccca4c60c11024fa51a647f039f546, type: 3}
   generationPoint: {fileID: 1425109501}
   distanceBetween: 15
-  distanceBetweenMin: 15
-  distanceBetweenMax: 20
-  theObjectPool: {fileID: 613429662}
+  distanceBetweenMin: 20
+  distanceBetweenMax: 25
+  thePlatforms:
+  - {fileID: 832161168799823042, guid: 88ccca4c60c11024fa51a647f039f546, type: 3}
+  - {fileID: 3755710389252878792, guid: 3c39946122ab8f6409858b87efbc7633, type: 3}
 --- !u!4 &593130326
 Transform:
   m_ObjectHideFlags: 0
