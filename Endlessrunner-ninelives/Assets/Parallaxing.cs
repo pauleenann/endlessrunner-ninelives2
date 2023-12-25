@@ -5,9 +5,11 @@ using UnityEngine;
 public class Parallaxing : MonoBehaviour
 {
     float depth = 1;
+    public float speedController;
     PlayerController player;
     public Transform generationPoint;
-    public Transform destructionPoint;
+    public Transform destructionPoint; 
+    private ScoreManager theScoreManager;
 
 
     void Awake()
@@ -19,7 +21,8 @@ public class Parallaxing : MonoBehaviour
     {
 
         float speed = player.moveSpeed / depth;
-        speed *= 0.2f;
+        speed *= speedController;
+
         Vector2 pos = transform.position;
 
         pos.x -= speed * Time.fixedDeltaTime;
