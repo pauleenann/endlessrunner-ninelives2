@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using TMPro;
 
 
@@ -13,6 +14,9 @@ public class GameManager : MonoBehaviour
     public TextMeshProUGUI livesText;
     public int totalLivesLeft;
     public int maxLives = 9;
+    public Image[] lives;
+    public Sprite hasLives;
+    public Sprite blankLives;
 
     public PlayerController thePlayer;
     private Vector3 playerStartPoint;
@@ -38,7 +42,14 @@ public class GameManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        foreach (Image img in lives)
+        {
+            img.sprite = blankLives;
+        }
+        for (int i = 0; i < maxLives; i++)
+        {
+            lives[i].sprite = hasLives;
+        }
     }
 
     public void RestartGame()
@@ -47,6 +58,7 @@ public class GameManager : MonoBehaviour
         {
           
             maxLives--;
+            
             //stops scoring
             theScoreManager.scoreIncreasing = false;
             //player object will be inactive
@@ -67,10 +79,10 @@ public class GameManager : MonoBehaviour
 
     public void Reset()
     {
-
+        
 
         //deathScreen.gameObject.SetActive(false);
-        
+
         livesText.text = "Lives: " + maxLives;
         platformList = FindObjectsOfType<PlatformDestroyer>();
 
