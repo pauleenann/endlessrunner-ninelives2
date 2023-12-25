@@ -42,14 +42,7 @@ public class GameManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        foreach (Image img in lives)
-        {
-            img.sprite = blankLives;
-        }
-        for (int i = 0; i < maxLives; i++)
-        {
-            lives[i].sprite = hasLives;
-        }
+        
     }
 
     public void RestartGame()
@@ -83,7 +76,7 @@ public class GameManager : MonoBehaviour
 
         //deathScreen.gameObject.SetActive(false);
 
-        livesText.text = "Lives: " + maxLives;
+        //livesText.text = "Lives: " + maxLives;
         platformList = FindObjectsOfType<PlatformDestroyer>();
 
         for (int i = 0; i < platformList.Length; i++)
@@ -102,8 +95,16 @@ public class GameManager : MonoBehaviour
 
     public void Resume()
     {
+        foreach (Image img in lives)
+        {
+            img.sprite = blankLives;
+        }
+        for (int i = 0; i < maxLives; i++)
+        {
+            lives[i].sprite = hasLives;
+        }
         //maxLives--;
-        livesText.text = "Lives: " + maxLives;
+        //livesText.text = "Lives: " + maxLives;
 
         // Find the Main Camera
         Camera mainCamera = Camera.main;
