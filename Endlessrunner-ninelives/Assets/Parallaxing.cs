@@ -14,15 +14,10 @@ public class Parallaxing : MonoBehaviour
     {
         player = GameObject.Find("Player").GetComponent<PlayerController>();
     }
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
 
-    // Update is called once per frame
     void Update()
     {
+
         float speed = player.moveSpeed / depth;
         speed *= 0.2f;
         Vector2 pos = transform.position;
