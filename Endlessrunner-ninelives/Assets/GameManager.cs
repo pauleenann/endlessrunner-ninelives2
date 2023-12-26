@@ -28,6 +28,7 @@ public class GameManager : MonoBehaviour
     public DeathMenu deathScreen;
 
     public GameObject resumeScreen;
+    private float scoreCounter;
 
 
 
@@ -37,6 +38,7 @@ public class GameManager : MonoBehaviour
         platformStartPoint = platformGenerator.position;
         playerStartPoint = thePlayer.transform.position;
         theScoreManager = FindObjectOfType<ScoreManager>();
+        scoreCounter = theScoreManager.scoreCount;
     }
 
     // Update is called once per frame
@@ -109,7 +111,9 @@ public class GameManager : MonoBehaviour
         // Find the Main Camera
         Camera mainCamera = Camera.main;
         Debug.Log("Main Camera X Position: " + mainCamera.transform.position.x);
-        thePlayer.transform.position = new Vector3(mainCamera.transform.position.x - 6f, transform.position.y + 9f, transform.position.z);
+        
+        //kung saan maglland ung player pag ginamit ung lives
+        thePlayer.transform.position = new Vector3(mainCamera.transform.position.x - 5f, transform.position.y + 6f, transform.position.z);
         theScoreManager.scoreIncreasing = true;
         thePlayer.gameObject.SetActive(true);
     }

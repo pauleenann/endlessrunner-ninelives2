@@ -1234,6 +1234,9 @@ MonoBehaviour:
   livesText: {fileID: 1491928435}
   totalLivesLeft: 0
   maxLives: 9
+  lives: []
+  hasLives: {fileID: 0}
+  blankLives: {fileID: 0}
   thePlayer: {fileID: 374440142}
   deathScreen: {fileID: 1647567553}
   resumeScreen: {fileID: 1752973282}
@@ -1470,7 +1473,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9cd620457ad63324b89b52b807cb5f7d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pooledObject: {fileID: 1094345306437685808, guid: 7594e804f5bd0e04ea1a8dcc80cc9027, type: 3}
+  pooledObject: {fileID: 8206805683061071460, guid: c3806fa71fae5044381b31f706f2920d, type: 3}
   pooledAmount: 5
 --- !u!1 &616534560
 GameObject:
@@ -3141,7 +3144,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9cd620457ad63324b89b52b807cb5f7d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pooledObject: {fileID: 1220284702408585900, guid: fe16d75d54cf8314abe75609aecf4ff1, type: 3}
+  pooledObject: {fileID: 6820336256847914974, guid: e916549fb9ce2ff4284018bf4cc0deb0, type: 3}
   pooledAmount: 2
 --- !u!1 &1377178437
 GameObject:
@@ -3455,7 +3458,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9cd620457ad63324b89b52b807cb5f7d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pooledObject: {fileID: 5985492790691759846, guid: 4029b01c16013eb449db1494db95ef5b, type: 3}
+  pooledObject: {fileID: 4211287903957305416, guid: 2dad40bfe0625104b9714b3e5190eb71, type: 3}
   pooledAmount: 2
 --- !u!1 &1491928433
 GameObject:
@@ -4687,18 +4690,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8ffba0bbe3995b04991a078e4e5693d4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  thePlatform: {fileID: 0}
+  thePlatform: {fileID: 1701394775106925686, guid: b48e30f1df6de1e41a536e3ee5973f47, type: 3}
   generationPoint: {fileID: 1651950904}
   distanceBetween: 0
   distanceBetweenMin: 20
-  distanceBetweenMax: 22
+  distanceBetweenMax: 25
   theObjectPools:
   - {fileID: 1459741262}
   - {fileID: 1305236690}
   - {fileID: 597741373}
-  maxHeighPoint: {fileID: 250678224}
+  maxHeightPoint: {fileID: 0}
   maxHeightChange: 2
-  randomizer: 0
 --- !u!1 &2029165234
 GameObject:
   m_ObjectHideFlags: 0
@@ -5306,10 +5308,10 @@ SceneRoots:
   - {fileID: 2029165238}
   - {fileID: 314344513}
   - {fileID: 1087268907}
-  - {fileID: 1113235534}
   - {fileID: 374440143}
   - {fileID: 238941379}
-  - {fileID: 1539117164}
   - {fileID: 521115176}
   - {fileID: 991519984}
+  - {fileID: 1539117164}
   - {fileID: 1986680476}
+  - {fileID: 1113235534}

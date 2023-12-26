@@ -40,7 +40,8 @@ public class PlatformGenerator2 : MonoBehaviour
         //platformwidth does not have a value yet idk why
         for (int i = 0; i < theObjectPools.Length; i++)
         {
-            platformWidths[i] = theObjectPools[i].pooledObject.GetComponent<PolygonCollider2D>().bounds.size.x;
+            //mali to di ko alam bat di nakukuha ung size.x
+            platformWidths[i] = theObjectPools[i].pooledObject.GetComponent<BoxCollider2D>().size.x;
             
         }
 

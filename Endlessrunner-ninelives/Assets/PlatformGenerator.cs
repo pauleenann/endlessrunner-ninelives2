@@ -80,6 +80,7 @@ public class PlatformGenerator : MonoBehaviour
 
             //transform.position = new Vector3(transform.position.x + platformWidth + distanceBetween, transform.position.y, transform.position.z);
             transform.position = new Vector3(transform.position.x + (platformWidths[platformSelector]/2) + distanceBetween, heightChange, transform.position.z);
+            Debug.Log("plwidthselector: " + platformWidths[platformSelector]);
 
             //copies an existing object
             //3 values         

@@ -17,13 +17,6 @@ public class Points : MonoBehaviour
 
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
-
     //built in function
     //when something enters the trigger tha has a collider
     void OnTriggerEnter2D(Collider2D other)
