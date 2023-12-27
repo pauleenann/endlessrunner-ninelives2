@@ -1455,52 +1455,6 @@ MonoBehaviour:
   highScoreCount: 0
   pointsPerSecond: 5
   scoreIncreasing: 1
---- !u!1 &469824537
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 469824538}
-  - component: {fileID: 469824539}
-  m_Layer: 0
-  m_Name: ObjectPooler (2)
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &469824538
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 469824537}
-  serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 5.3028154, y: -6.1390066, z: 0.1975732}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 1038846050}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &469824539
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 469824537}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9cd620457ad63324b89b52b807cb5f7d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  pooledObject: {fileID: 8206805683061071460, guid: c3806fa71fae5044381b31f706f2920d, type: 3}
-  pooledAmount: 2
 --- !u!1 &501835883
 GameObject:
   m_ObjectHideFlags: 0
@@ -3226,7 +3180,6 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1468250893}
-  - {fileID: 469824538}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1043758268
@@ -6304,16 +6257,15 @@ MonoBehaviour:
   thePlatform: {fileID: 2735114240425073243, guid: 593e0ad48c182474d85fe0e6f8a2f5cf, type: 3}
   generationPoint: {fileID: 528921814}
   distanceBetween: 12
-  distanceBetweenMin: 10
+  distanceBetweenMin: 12
   distanceBetweenMax: 15
   theObjectPools:
   - {fileID: 1468250894}
-  - {fileID: 469824539}
   maxHeighPoint: {fileID: 693132993}
   maxHeightChange: 2
   randomizer: 0
-  fishHeight: 5.5
-  coinHeight: 5.5
+  fishHeight: 7
+  coinHeight: 7
 --- !u!1 &2008599675
 GameObject:
   m_ObjectHideFlags: 0
