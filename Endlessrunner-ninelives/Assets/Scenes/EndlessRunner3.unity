@@ -6429,6 +6429,8 @@ MonoBehaviour:
   maxHeighPoint: {fileID: 37732764}
   maxHeightChange: 2
   randomizer: 0
+  fishHeight: 9
+  coinHeight: 9.7
 --- !u!4 &1997900677
 Transform:
   m_ObjectHideFlags: 0

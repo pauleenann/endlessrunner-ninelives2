@@ -27,6 +27,13 @@ public class PlatformGenerator2 : MonoBehaviour
     public float maxHeightChange;
     private float heightChange;
 
+    private CoinGenerator theCoinGenerator;
+    private FishGenerator theFishGenerator;
+
+    private int randomCoinSpawn;
+    private int randomFishSpawn;
+    public int randomizer;
+
 
     // Start is called before the first frame update
     void Start()
@@ -49,6 +56,10 @@ public class PlatformGenerator2 : MonoBehaviour
         minHeight = transform.position.y;
         //position.y ng maxheightpoiunt
         maxHeight = maxHeightPoint.position.y;
+
+        theCoinGenerator = FindObjectOfType<CoinGenerator>();
+        theFishGenerator = FindObjectOfType<FishGenerator>();
+        randomizer = Random.Range(61, 100);
     }
 
     // Update is called once per frame
@@ -68,14 +79,12 @@ public class PlatformGenerator2 : MonoBehaviour
 
             heightChange = transform.position.y + Random.Range(maxHeightChange, -maxHeightChange);
             //new transform.position ng platformgenerator
-            transform.position = new Vector3(transform.position.x + (platformWidths[platformSelector]/2) + distanceBetween, heightChange, transform.position.z);
+            transform.position = new Vector3(transform.position.x + (platformWidths[platformSelector]/3) + distanceBetween, heightChange, transform.position.z);
             Debug.Log("pw+db: " + ((platformWidths[platformSelector] / 2) + distanceBetween));
             Debug.Log(transform.position);
 
 
             //Instantiate(/*thePlatform*/thePlatforms[platformSelector], transform.position, transform.rotation);
-
-
 
             GameObject newPlatform = theObjectPools[platformSelector].GetPooledObject();
 
@@ -83,7 +92,21 @@ public class PlatformGenerator2 : MonoBehaviour
             newPlatform.transform.rotation = transform.rotation;
             newPlatform.SetActive(true);
 
-            transform.position = new Vector3(transform.position.x + (platformWidths[platformSelector] / 2), heightChange, transform.position.z);
+            int randomSpawn = Random.Range(0, 100);
+
+            if (randomSpawn < randomizer)
+            {
+                // Spawn coin
+                theCoinGenerator.SpawnCoins(new Vector3(transform.position.x, transform.position.y + 6f, transform.position.z));
+            }
+            else
+            {
+                // Spawn fish
+                theFishGenerator.SpawnFish(new Vector3(transform.position.x, transform.position.y + 6f, transform.position.z));
+            }
+
+
+            transform.position = new Vector3(transform.position.x + (platformWidths[platformSelector] / 2), transform.position.y, transform.position.z);
         }
     }
 }

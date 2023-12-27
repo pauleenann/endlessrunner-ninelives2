@@ -36,6 +36,9 @@ public class PlatformGenerator : MonoBehaviour
     private int randomFishSpawn;
     public int randomizer;
 
+    public float fishHeight;
+    public float coinHeight;
+
     void Start()
     {
         //platformWidth = thePlatform.GetComponent<BoxCollider2D>().size.x;
@@ -97,12 +100,12 @@ public class PlatformGenerator : MonoBehaviour
             if (randomSpawn < randomizer)
             {
                 // Spawn coin
-                theCoinGenerator.SpawnCoins(new Vector3(transform.position.x, transform.position.y + 9.7f, transform.position.z));
+                theCoinGenerator.SpawnCoins(new Vector3(transform.position.x, transform.position.y + coinHeight, transform.position.z));
             }
             else
             {
                 // Spawn fish
-                theFishGenerator.SpawnFish(new Vector3(transform.position.x, transform.position.y + 9.7f, transform.position.z));
+                theFishGenerator.SpawnFish(new Vector3(transform.position.x, transform.position.y + fishHeight, transform.position.z));
             }
 
 
