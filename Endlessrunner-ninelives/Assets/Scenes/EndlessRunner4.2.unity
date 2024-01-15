@@ -2005,7 +2005,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 1514331608}
         m_TargetAssemblyTypeName: PauseMenu, Assembly-CSharp
         m_MethodName: QuitToMain
         m_Mode: 1
@@ -2783,7 +2783,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 1514331608}
         m_TargetAssemblyTypeName: PauseMenu, Assembly-CSharp
         m_MethodName: Restart
         m_Mode: 1
@@ -4121,7 +4121,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 1514331608}
         m_TargetAssemblyTypeName: PauseMenu, Assembly-CSharp
         m_MethodName: Resume
         m_Mode: 1
@@ -4180,6 +4180,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1514331607}
+  - component: {fileID: 1514331608}
   m_Layer: 5
   m_Name: PauseMenu
   m_TagString: Untagged
@@ -4211,6 +4212,20 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: -462, y: -172}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1514331608
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1514331606}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2f7d58d25f1fb2d4687f876d7e313c6e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mainMenuLevel: MainMenu
+  pauseMenu: {fileID: 1514331606}
 --- !u!1 &1576629175
 GameObject:
   m_ObjectHideFlags: 0
@@ -5235,8 +5250,8 @@ MonoBehaviour:
   thePlatform: {fileID: 2735114240425073243, guid: 593e0ad48c182474d85fe0e6f8a2f5cf, type: 3}
   generationPoint: {fileID: 528921814}
   distanceBetween: 12
-  distanceBetweenMin: 13
-  distanceBetweenMax: 15
+  distanceBetweenMin: 15
+  distanceBetweenMax: 20
   theObjectPools:
   - {fileID: 1468250894}
   maxHeighPoint: {fileID: 693132993}
