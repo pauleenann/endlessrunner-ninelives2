@@ -4,14 +4,25 @@ using UnityEngine;
 
 public class MainMenu : MonoBehaviour
 {
-
-    public string gameLevel;
+    public string catLevel;
+    public string mapLevel;
+    public string aboutUsLevel;
 
     public void Play()
     {
         //displays game scene when play button is pressed
-        Application.LoadLevel(gameLevel);
+        Application.LoadLevel(mapLevel);
     } 
+
+    public void Cat()
+    {
+        Application.LoadLevel(catLevel);
+    }
+
+    public void AboutUs()
+    {
+        Application.LoadLevel(aboutUsLevel);
+    }
 
     public void Quit()
     {
