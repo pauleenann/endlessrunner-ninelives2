@@ -8,6 +8,12 @@ public class MapsMenu : MonoBehaviour
     public string forestLevel;
     public string houseFencesLevel;
     public string nightLevel;
+    public string mainMenuLevel;
+
+   public void Back()
+    {
+        Application.LoadLevel(mainMenuLevel);
+    }
 
    public void Default()
     {

@@ -2008,6 +2008,7 @@ MonoBehaviour:
   forestLevel: 
   houseFencesLevel: 
   nightLevel: EndlessRunner4.2
+  mainMenuLevel: MainMenu
 --- !u!1 &905057445
 GameObject:
   m_ObjectHideFlags: 0
@@ -2357,7 +2358,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 65, y: -34}
+  m_AnchoredPosition: {x: 65, y: -38}
   m_SizeDelta: {x: 83.75391, y: 38.599}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1110656316
@@ -2404,10 +2405,10 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 793834092}
-        m_TargetAssemblyTypeName: GoToMenu, Assembly-CSharp
-        m_MethodName: GoToScene
-        m_Mode: 5
+      - m_Target: {fileID: 793834093}
+        m_TargetAssemblyTypeName: MapsMenu, Assembly-CSharp
+        m_MethodName: Back
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -3470,7 +3471,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 107.95}
+  m_AnchoredPosition: {x: 0, y: 118}
   m_SizeDelta: {x: 215.8918, y: 215.8918}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1923736772

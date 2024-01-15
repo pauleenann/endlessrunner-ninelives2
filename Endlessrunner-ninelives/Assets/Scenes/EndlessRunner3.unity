@@ -3202,11 +3202,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2e4ce81811f0ce74cb009efc019e1479, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 10
+  moveSpeed: 8
   speedMultiplier: 1.05
   speedIncreaseMilestone: 50
   jumpForce: 10
-  jumpTime: 0.3
+  jumpTime: 0.35
   grounded: 0
   whatIsGround:
     serializedVersion: 2
