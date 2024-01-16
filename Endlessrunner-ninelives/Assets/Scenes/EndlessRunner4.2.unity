@@ -776,6 +776,7 @@ GameObject:
   m_Component:
   - component: {fileID: 414750059}
   - component: {fileID: 414750061}
+  - component: {fileID: 414750062}
   m_Layer: 0
   m_Name: houses_night-in-the-suburbs (1)
   m_TagString: Untagged
@@ -792,7 +793,7 @@ Transform:
   m_GameObject: {fileID: 414750058}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 18.486599, y: 3.4, z: 26}
+  m_LocalPosition: {x: 18.486599, y: 3.4, z: 30.3}
   m_LocalScale: {x: 0.7407068, y: 0.7407068, z: 0.7407068}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -850,6 +851,21 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &414750062
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 414750058}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a1f4c59cc777c314b83d48a69df932ab, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speedController: 0.1
+  generationPoint: {fileID: 528921814}
+  destructionPoint: {fileID: 155486048}
 --- !u!1 &428075567
 GameObject:
   m_ObjectHideFlags: 0
@@ -1589,7 +1605,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a1f4c59cc777c314b83d48a69df932ab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speedController: 0.3
+  speedController: 0.2
   generationPoint: {fileID: 528921814}
   destructionPoint: {fileID: 155486048}
 --- !u!212 &696094356
@@ -2293,6 +2309,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1020597338}
   - component: {fileID: 1020597339}
+  - component: {fileID: 1020597340}
   m_Layer: 0
   m_Name: houses_night-in-the-suburbs
   m_TagString: Untagged
@@ -2309,7 +2326,7 @@ Transform:
   m_GameObject: {fileID: 1020597337}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -12.7, y: 3.4, z: 26}
+  m_LocalPosition: {x: -12.7, y: 3.4, z: 30.3}
   m_LocalScale: {x: 0.7407068, y: 0.7407068, z: 0.7407068}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2367,6 +2384,21 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1020597340
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1020597337}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a1f4c59cc777c314b83d48a69df932ab, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speedController: 0.1
+  generationPoint: {fileID: 528921814}
+  destructionPoint: {fileID: 155486048}
 --- !u!1 &1038846049
 GameObject:
   m_ObjectHideFlags: 0
@@ -3588,7 +3620,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 7.5865, y: -3.8043}
+  m_AnchoredPosition: {x: 7.586487, y: -3.8042984}
   m_SizeDelta: {x: 482.8614, y: 199.4752}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1388883615
@@ -5250,8 +5282,8 @@ MonoBehaviour:
   thePlatform: {fileID: 2735114240425073243, guid: 593e0ad48c182474d85fe0e6f8a2f5cf, type: 3}
   generationPoint: {fileID: 528921814}
   distanceBetween: 12
-  distanceBetweenMin: 15
-  distanceBetweenMax: 20
+  distanceBetweenMin: 13.5
+  distanceBetweenMax: 15
   theObjectPools:
   - {fileID: 1468250894}
   maxHeighPoint: {fileID: 693132993}
