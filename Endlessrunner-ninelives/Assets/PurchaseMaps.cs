@@ -23,6 +23,8 @@ public class PurchaseMaps : MonoBehaviour
             totalFish = PlayerPrefs.GetInt("HighFish");
         }
 
+        coinsText.text = "" + totalCoins;
+        fishText.text = "" + totalFish;
     }
 
     // Update is called once per frame
