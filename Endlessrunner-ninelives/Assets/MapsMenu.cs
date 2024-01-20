@@ -30,6 +30,10 @@ public class MapsMenu : MonoBehaviour
     
     void Start()
     {
+        //nightMapPrice = PlayerPrefs.GetInt("NightMapPrice", 100);  // Use your default value
+        //forestMapPrice = PlayerPrefs.GetInt("ForestMapPrice", 100000);  // Use your default value
+
+
         if (PlayerPrefs.HasKey("HighCoin"))
         {
             totalCoins = PlayerPrefs.GetInt("HighCoin");
@@ -38,6 +42,13 @@ public class MapsMenu : MonoBehaviour
         if (PlayerPrefs.HasKey("HighFish"))
         {
             totalFish = PlayerPrefs.GetInt("HighFish");
+        }
+
+        if(nightMapPrice == 0)
+        {
+            nightCoin.SetActive(false);
+            nightPrice.SetActive(false);
+            nightPlay.SetActive(true);
         }
 
         coinsText.text = "" + totalCoins;
@@ -82,31 +93,40 @@ public class MapsMenu : MonoBehaviour
 
     public void Night()
     {
-        Debug.Log(totalCoins);
-        Debug.Log(nightMapPrice);
-        if(nightMapPrice != 0){
+        if (nightMapPrice != 0)
+        {
             buyNight.SetActive(true);
-        }
-        else if (nightMapPrice == 0)
-        {
-            Application.LoadLevel(nightLevel);
-        }
-        else if(totalCoins >= nightMapPrice)
-        {
-            mapUnlocked.SetActive(true);
-            nightCoin.SetActive(false);
-            nightPrice.SetActive(false);
-            nightPlay.SetActive(true);
-            totalCoins -= nightMapPrice;
-            nightMapPrice = 0;
-            coinsText.text = "" + totalCoins;
-            //LoadLevel(nightLevel);
         }
         else
         {
-         
-            insufficientCoins.SetActive(true);
+            Application.LoadLevel(nightLevel);
         }
+
+        //Debug.Log(totalCoins);
+        //Debug.Log(nightMapPrice);
+        //if(nightMapPrice != 0){
+        //    buyNight.SetActive(true);
+        //}
+        //else if (nightMapPrice == 0)
+        //{
+        //    Application.LoadLevel(nightLevel);
+        //}
+        //else if(totalCoins >= nightMapPrice)
+        //{
+        //    mapUnlocked.SetActive(true);
+        //    nightCoin.SetActive(false);
+        //    nightPrice.SetActive(false);
+        //    nightPlay.SetActive(true);
+        //    totalCoins -= nightMapPrice;
+        //    nightMapPrice = 0;
+        //    coinsText.text = "" + totalCoins;
+        //    //LoadLevel(nightLevel);
+        //}
+        //else
+        //{
+         
+        //    insufficientCoins.SetActive(true);
+        //}
     }
 
     public void BuyMap()
@@ -121,7 +141,35 @@ public class MapsMenu : MonoBehaviour
             forestMapPrice = 0;
             coinsText.text = "" + totalCoins;
             //LoadLevel(nightLevel);
+            //PlayerPrefs.SetInt("ForestMapPrice", forestMapPrice);
+            PlayerPrefs.SetInt("HighCoin", totalCoins);
+            PlayerPrefs.Save();
         }
+
+        else
+        {
+
+            insufficientCoins.SetActive(true);
+        }
+    }
+
+    public void BuyMapNight()
+    {
+        if (totalCoins >= nightMapPrice)
+        {
+            mapUnlocked.SetActive(true);
+            nightCoin.SetActive(false);
+            nightPrice.SetActive(false);
+            nightPlay.SetActive(true);
+            totalCoins -= nightMapPrice;
+            nightMapPrice = 0;
+            coinsText.text = "" + totalCoins;
+            //LoadLevel(nightLevel);
+            //PlayerPrefs.SetInt("NightMapPrice", nightMapPrice);
+            PlayerPrefs.SetInt("HighCoin", totalCoins);
+            PlayerPrefs.Save();
+        }
+
         else
         {
 

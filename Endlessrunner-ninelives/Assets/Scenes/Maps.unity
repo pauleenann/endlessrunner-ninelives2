@@ -2428,7 +2428,7 @@ MonoBehaviour:
   fishText: {fileID: 1836686279}
   totalCoins: 0
   totalFish: 0
-  forestMapPrice: 0
+  forestMapPrice: 100
   nightMapPrice: 100
   forestLevel: EndlessRunner4.2 Into The Woods
   defaultLevel: EndlessRunner3
@@ -3302,7 +3302,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 10.5, y: -87}
+  m_AnchoredPosition: {x: 6.9, y: -87}
   m_SizeDelta: {x: 151.9139, y: 49.1413}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1208274524
@@ -3815,7 +3815,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 793834093}
         m_TargetAssemblyTypeName: MapsMenu, Assembly-CSharp
-        m_MethodName: Night
+        m_MethodName: BuyMapNight
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

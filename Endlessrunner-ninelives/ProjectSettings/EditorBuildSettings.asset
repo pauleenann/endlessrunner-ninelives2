@@ -20,4 +20,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/EndlessRunner4.2.unity
     guid: 4fd54317bb160b54cac998b07006b191
+  - enabled: 1
+    path: Assets/Scenes/EndlessRunner4.2 Into The Woods.unity
+    guid: 5dcc5cd59573e9e43b7561c75587bed4
   m_configObjects: {}
