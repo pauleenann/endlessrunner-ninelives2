@@ -56,7 +56,7 @@ AnimatorController:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Player
+  m_Name: Bengal
   serializedVersion: 5
   m_AnimatorParameters:
   - m_Name: Speed
@@ -106,7 +106,7 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: 7400000, guid: e524cc82cc0817540976265c258b0bd2, type: 2}
+  m_Motion: {fileID: 7400000, guid: 48c6334a41605704c879bf226e014484, type: 2}
   m_Tag: 
   m_SpeedParameter: 
   m_MirrorParameter: 
@@ -161,7 +161,7 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: 7400000, guid: 398250a5bedbca54ca10a3a42ab11c72, type: 2}
+  m_Motion: {fileID: 7400000, guid: ddc46903ff4e31a4b956c95b82a447ce, type: 2}
   m_Tag: 
   m_SpeedParameter: 
   m_MirrorParameter: 
@@ -238,7 +238,7 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: 7400000, guid: 3d1115d3de3fdb44da935f456d349506, type: 2}
+  m_Motion: {fileID: 7400000, guid: d69104adf2f8322439e9c6fa7d3c7192, type: 2}
   m_Tag: 
   m_SpeedParameter: 
   m_MirrorParameter: 
