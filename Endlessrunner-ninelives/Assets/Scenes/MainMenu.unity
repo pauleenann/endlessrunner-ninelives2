@@ -666,7 +666,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5af2283a5f2fe844fb7fdc60ae3a59ef, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  catLevel: Cats
+  catLevel: Cats2
   mapLevel: Maps
   aboutUsLevel: 
 --- !u!1 &1010991865
@@ -964,7 +964,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5af2283a5f2fe844fb7fdc60ae3a59ef, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  catLevel: Cats
+  catLevel: Cats2
   mapLevel: 
   aboutUsLevel: 
 --- !u!1 &1302815603
