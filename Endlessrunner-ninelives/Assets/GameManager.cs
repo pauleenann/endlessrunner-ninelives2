@@ -30,6 +30,7 @@ public class GameManager : MonoBehaviour
     public GameObject resumeScreen;
     private float scoreCounter;
 
+    public GameObject[] playerArray;
 
 
     // Start is called before the first frame update
@@ -111,7 +112,19 @@ public class GameManager : MonoBehaviour
         // Find the Main Camera
         Camera mainCamera = Camera.main;
         Debug.Log("Main Camera X Position: " + mainCamera.transform.position.x);
-        
+
+        //kung sinong player and marerespawn
+        for (int i = 0; i < playerArray.Length; i++)
+        {
+            if (playerArray[i].activeSelf)
+            {
+                thePlayer = playerArray[i].GetComponent<PlayerController>();
+                // You found an active player, so you can break out of the loop
+                break;
+            }
+        }
+
+
         //kung saan maglland ung player pag ginamit ung lives
         thePlayer.transform.position = new Vector3(mainCamera.transform.position.x - 5f, transform.position.y + 6f, transform.position.z);
         theScoreManager.scoreIncreasing = true;
