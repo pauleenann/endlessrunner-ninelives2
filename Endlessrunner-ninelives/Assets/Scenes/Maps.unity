@@ -656,7 +656,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -28.6, y: -93.100006}
+  m_AnchoredPosition: {x: -18, y: -93.100006}
   m_SizeDelta: {x: 20, y: 20}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &261930132
@@ -863,7 +863,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -26.400024, y: -93.1}
+  m_AnchoredPosition: {x: -11, y: -93.1}
   m_SizeDelta: {x: 20, y: 20}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &308728510
@@ -1661,7 +1661,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 100,000
+  m_text: 200
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: b5467735273b1b34f9022e8073bf9233, type: 2}
   m_sharedMaterial: {fileID: -2191548613070602517, guid: b5467735273b1b34f9022e8073bf9233, type: 2}
@@ -2428,7 +2428,7 @@ MonoBehaviour:
   fishText: {fileID: 1836686279}
   totalCoins: 0
   totalFish: 0
-  forestMapPrice: 200
+  forestMapPrice: 200000
   nightMapPrice: 1000
   forestLevel: EndlessRunner4.2 Into The Woods
   defaultLevel: EndlessRunner3
@@ -3092,7 +3092,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 14.900055, y: -87}
+  m_AnchoredPosition: {x: 13, y: -87}
   m_SizeDelta: {x: 151.9139, y: 49.1413}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1138017939
@@ -3115,7 +3115,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 300,000
+  m_text: 1000
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: b5467735273b1b34f9022e8073bf9233, type: 2}
   m_sharedMaterial: {fileID: -2191548613070602517, guid: b5467735273b1b34f9022e8073bf9233, type: 2}
