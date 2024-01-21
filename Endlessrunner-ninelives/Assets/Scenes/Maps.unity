@@ -2295,7 +2295,6 @@ GameObject:
   - component: {fileID: 793834088}
   - component: {fileID: 793834092}
   - component: {fileID: 793834093}
-  - component: {fileID: 793834094}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -2445,22 +2444,6 @@ MonoBehaviour:
   forestPrice: {fileID: 574102436}
   forestPlay: {fileID: 1260843764}
   buyForest: {fileID: 1660493079}
---- !u!114 &793834094
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 793834087}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: edc5c6f0517999f4f8ef086296cab1ee, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  coinsText: {fileID: 490690563}
-  fishText: {fileID: 1836686279}
-  totalCoins: 0
-  totalFish: 0
 --- !u!1 &847482335
 GameObject:
   m_ObjectHideFlags: 0
