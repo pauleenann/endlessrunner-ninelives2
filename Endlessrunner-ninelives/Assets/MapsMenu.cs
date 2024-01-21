@@ -30,9 +30,12 @@ public class MapsMenu : MonoBehaviour
     
     void Start()
     {
-        //nightMapPrice = PlayerPrefs.GetInt("NightMapPrice", 100);  // Use your default value
-        //forestMapPrice = PlayerPrefs.GetInt("ForestMapPrice", 100000);  // Use your default value
-
+        nightMapPrice = PlayerPrefs.GetInt("NightMapPrice", 1000);  // Use your default value
+        forestMapPrice = PlayerPrefs.GetInt("ForestMapPrice", 200);  // Use your default value
+        
+        //uncomment this to reset purchases
+        //forestMapPrice = 200;
+        nightMapPrice = 1000;
 
         if (PlayerPrefs.HasKey("HighCoin"))
         {
@@ -49,6 +52,13 @@ public class MapsMenu : MonoBehaviour
             nightCoin.SetActive(false);
             nightPrice.SetActive(false);
             nightPlay.SetActive(true);
+        }
+
+        if (forestMapPrice == 0)
+        {
+            forestCoin.SetActive(false);
+            forestPrice.SetActive(false);
+            forestPlay.SetActive(true);
         }
 
         coinsText.text = "" + totalCoins;
@@ -141,7 +151,7 @@ public class MapsMenu : MonoBehaviour
             forestMapPrice = 0;
             coinsText.text = "" + totalCoins;
             //LoadLevel(nightLevel);
-            //PlayerPrefs.SetInt("ForestMapPrice", forestMapPrice);
+            PlayerPrefs.SetInt("ForestMapPrice", forestMapPrice);
             PlayerPrefs.SetInt("HighCoin", totalCoins);
             PlayerPrefs.Save();
         }
@@ -165,7 +175,7 @@ public class MapsMenu : MonoBehaviour
             nightMapPrice = 0;
             coinsText.text = "" + totalCoins;
             //LoadLevel(nightLevel);
-            //PlayerPrefs.SetInt("NightMapPrice", nightMapPrice);
+            PlayerPrefs.SetInt("NightMapPrice", nightMapPrice);
             PlayerPrefs.SetInt("HighCoin", totalCoins);
             PlayerPrefs.Save();
         }

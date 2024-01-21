@@ -2428,8 +2428,8 @@ MonoBehaviour:
   fishText: {fileID: 1836686279}
   totalCoins: 0
   totalFish: 0
-  forestMapPrice: 100
-  nightMapPrice: 100
+  forestMapPrice: 200
+  nightMapPrice: 1000
   forestLevel: EndlessRunner4.2 Into The Woods
   defaultLevel: EndlessRunner3
   nightLevel: EndlessRunner4.2
