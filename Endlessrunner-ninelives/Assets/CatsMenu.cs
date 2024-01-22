@@ -38,7 +38,7 @@ public class CatsMenu : MonoBehaviour
         norwegianPrice = PlayerPrefs.GetInt("NorwegianPrice", 150);
         shorthairPrice = PlayerPrefs.GetInt("ShorthairPrice", 200);
         selectedPlayer = PlayerPrefs.GetInt("SelectedPlayer", 0);
-
+        //reset changes
         //PlayerPrefs.DeleteKey("SelectedPlayer");
         //PlayerPrefs.DeleteKey("BengalPrice");
         //PlayerPrefs.DeleteKey("NorwegianPrice");
