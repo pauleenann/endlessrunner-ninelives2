@@ -10,6 +10,8 @@ public class CatsMenu : MonoBehaviour
     public TextMeshProUGUI adoptBengal;
     public TextMeshProUGUI adoptNorwegian;
     public TextMeshProUGUI adoptShorthair;
+    public TextMeshProUGUI adoptDefault;
+
     public int totalCoins;
     public int totalFish;
     public string mainMenuLevel;
@@ -25,23 +27,40 @@ public class CatsMenu : MonoBehaviour
 
     public int selectedPlayer;
 
+    public TextMeshProUGUI[] adoptText;
+    public int[] catPrices;
+
+
 
     void Start()
     {
-        selectedPlayer = PlayerPrefs.GetInt("SelectedPlayer", 0);
+        //bengalPrice = PlayerPrefs.GetInt("BengalPrice", 1);
+        //norwegianPrice = PlayerPrefs.GetInt("NorwegianPrice", 2);
+        //shorthairPrice = PlayerPrefs.GetInt("ShorthairPrice", 3);
 
-        if (PlayerPrefs.HasKey("HighCoin"))
-        {
-            totalCoins = PlayerPrefs.GetInt("HighCoin");
-        }
+        PlayerPrefs.DeleteKey("BengalPrice");
+        PlayerPrefs.DeleteKey("NorwegianPrice");
+        PlayerPrefs.DeleteKey("ShorthairPrice");
 
-        if (PlayerPrefs.HasKey("HighFish"))
-        {
-            totalFish = PlayerPrefs.GetInt("HighFish");
-        }
 
         coinsText.text = "" + totalCoins;
         fishText.text = "" + totalFish;
+    }
+
+    void Update()
+    {
+        for (int i = 0; i < 4; i++)
+        {
+            if (i != selectedPlayer && catPrices[i] == 0)
+            {
+                adoptText[i].text = "Use";
+            }
+            else if(i == selectedPlayer && catPrices[i] == 0)
+            {
+                Debug.Log(i);
+                adoptText[i].text = "In Use";
+            }
+        }
     }
 
     public void Back()
@@ -71,6 +90,10 @@ public class CatsMenu : MonoBehaviour
             bengalPrice = 0;
             fishText.text = "" + totalFish;
             adoptBengal.text = "Use";
+            catPrices[1] = bengalPrice;
+            PlayerPrefs.SetInt("BengalPrice", bengalPrice);
+            PlayerPrefs.SetInt("HighFish", totalFish);
+            PlayerPrefs.Save();
         }
         else
         {
@@ -99,8 +122,12 @@ public class CatsMenu : MonoBehaviour
             mapUnlocked.SetActive(true);
             totalFish -= norwegianPrice;
             norwegianPrice = 0;
+            catPrices[2] = norwegianPrice;
             fishText.text = "" + totalFish;
             adoptNorwegian.text = "Use";
+            PlayerPrefs.SetInt("NorwegianPrice", norwegianPrice);
+            PlayerPrefs.SetInt("HighFish", totalFish);
+            PlayerPrefs.Save();
         }
         else
         {
@@ -129,8 +156,12 @@ public class CatsMenu : MonoBehaviour
             mapUnlocked.SetActive(true);
             totalFish -= shorthairPrice;
             shorthairPrice = 0;
+            catPrices[3] = shorthairPrice;
             fishText.text = "" + totalFish;
             adoptShorthair.text = "Use";
+            PlayerPrefs.SetInt("ShorthairPrice", shorthairPrice);
+            PlayerPrefs.SetInt("HighFish", totalFish);
+            PlayerPrefs.Save();
         }
         else
         {
