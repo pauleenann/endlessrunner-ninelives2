@@ -2713,8 +2713,9 @@ MonoBehaviour:
   adoptBengal: {fileID: 840666569}
   adoptNorwegian: {fileID: 1169019300}
   adoptShorthair: {fileID: 819081490}
+  adoptDefault: {fileID: 788224965}
   totalCoins: 0
-  totalFish: 0
+  totalFish: 500
   mainMenuLevel: MainMenu
   bengalPrice: 100
   norwegianPrice: 150
@@ -2733,6 +2734,12 @@ MonoBehaviour:
   - {fileID: 767378312}
   - {fileID: 1177501450}
   selectedPlayer: 0
+  adoptText:
+  - {fileID: 788224965}
+  - {fileID: 840666569}
+  - {fileID: 819081490}
+  - {fileID: 819081490}
+  catPrices: 000000006400000096000000c8000000
 --- !u!114 &652631569
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3169,7 +3176,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 3.3, y: -68}
+  m_AnchoredPosition: {x: 3.3, y: -72}
   m_SizeDelta: {x: 92.5081, y: 22.9391}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &840666569
@@ -4772,7 +4779,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 4.4, y: -69}
+  m_AnchoredPosition: {x: 4.4, y: -72}
   m_SizeDelta: {x: 92.5081, y: 22.9391}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1169019300
