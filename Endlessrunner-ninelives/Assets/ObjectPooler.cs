@@ -23,6 +23,7 @@ public class ObjectPooler : MonoBehaviour
             obj.SetActive(false);
             //add object to list
             pooledObjects.Add(obj);
+            Debug.Log(pooledObjects.Count);     
         }
     }
 
