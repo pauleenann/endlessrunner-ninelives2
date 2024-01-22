@@ -28,20 +28,25 @@ public class CatsMenu : MonoBehaviour
     public int selectedPlayer;
 
     public TextMeshProUGUI[] adoptText;
-    public int[] catPrices;
+    public int[] catPrices = { 0, 0, 0, 0 }; // Initialize with default values
 
 
 
     void Start()
     {
-        //bengalPrice = PlayerPrefs.GetInt("BengalPrice", 1);
-        //norwegianPrice = PlayerPrefs.GetInt("NorwegianPrice", 2);
-        //shorthairPrice = PlayerPrefs.GetInt("ShorthairPrice", 3);
+        bengalPrice = PlayerPrefs.GetInt("BengalPrice", 100);
+        norwegianPrice = PlayerPrefs.GetInt("NorwegianPrice", 150);
+        shorthairPrice = PlayerPrefs.GetInt("ShorthairPrice", 200);
+        selectedPlayer = PlayerPrefs.GetInt("SelectedPlayer", 0);
 
-        PlayerPrefs.DeleteKey("BengalPrice");
-        PlayerPrefs.DeleteKey("NorwegianPrice");
-        PlayerPrefs.DeleteKey("ShorthairPrice");
+        //PlayerPrefs.DeleteKey("SelectedPlayer");
+        //PlayerPrefs.DeleteKey("BengalPrice");
+        //PlayerPrefs.DeleteKey("NorwegianPrice");
+        //PlayerPrefs.DeleteKey("ShorthairPrice");
 
+        catPrices[1] = bengalPrice;
+        catPrices[2] = norwegianPrice;
+        catPrices[3] = shorthairPrice;
 
         coinsText.text = "" + totalCoins;
         fishText.text = "" + totalFish;
@@ -61,6 +66,15 @@ public class CatsMenu : MonoBehaviour
                 adoptText[i].text = "In Use";
             }
         }
+
+        SaveCatPrices();
+    }
+
+    void SaveCatPrices()
+    {
+        string catPricesString = string.Join(",", catPrices);
+        PlayerPrefs.SetString("CatPrices", catPricesString);
+        PlayerPrefs.Save();
     }
 
     public void Back()
