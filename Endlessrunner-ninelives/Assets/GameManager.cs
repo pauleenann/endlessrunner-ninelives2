@@ -80,6 +80,7 @@ public class GameManager : MonoBehaviour
         //deathScreen.gameObject.SetActive(false);
 
         //livesText.text = "Lives: " + maxLives;
+
         platformList = FindObjectsOfType<PlatformDestroyer>();
 
         for (int i = 0; i < platformList.Length; i++)
