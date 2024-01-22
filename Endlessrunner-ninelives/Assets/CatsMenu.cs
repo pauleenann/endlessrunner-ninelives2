@@ -21,12 +21,14 @@ public class CatsMenu : MonoBehaviour
     public string mapLevel;
 
     public GameObject[] seletCat;
-    public GameObject[] catsDescription; 
+    public GameObject[] catsDescription;
+
+    public int selectedPlayer;
 
 
     void Start()
     {
-
+        selectedPlayer = PlayerPrefs.GetInt("SelectedPlayer", 0);
 
         if (PlayerPrefs.HasKey("HighCoin"))
         {
@@ -140,6 +142,30 @@ public class CatsMenu : MonoBehaviour
     public void BackToMap()
     {
         Application.LoadLevel(mapLevel);
+    }
+
+    public void PlayDefault()
+    {
+        selectedPlayer = 0;
+        PlayerPrefs.SetInt("SelectedPlayer", selectedPlayer);
+    }
+
+    public void PlayBengal()
+    {
+        selectedPlayer = 1;
+        PlayerPrefs.SetInt("SelectedPlayer", selectedPlayer);
+    }
+
+    public void PlayNorwegian()
+    {
+        selectedPlayer = 2;
+        PlayerPrefs.SetInt("SelectedPlayer", selectedPlayer);
+    }
+
+    public void PlayShortHair()
+    {
+        selectedPlayer = 3;
+        PlayerPrefs.SetInt("SelectedPlayer", selectedPlayer);
     }
 
 }
