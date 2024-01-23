@@ -580,7 +580,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &400668245
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -866,6 +866,12 @@ MonoBehaviour:
   speedController: 0.1
   generationPoint: {fileID: 528921814}
   destructionPoint: {fileID: 155486048}
+  selectedPlayerString:
+  - Player
+  - Bengal
+  - Norwegian
+  - Shorthair
+  selectedPlayer: 0
 --- !u!1 &428075567
 GameObject:
   m_ObjectHideFlags: 0
@@ -1155,7 +1161,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!95 &509975981
 Animator:
   serializedVersion: 5
@@ -1845,6 +1851,12 @@ MonoBehaviour:
   speedController: 0.2
   generationPoint: {fileID: 528921814}
   destructionPoint: {fileID: 155486048}
+  selectedPlayerString:
+  - Player
+  - Bengal
+  - Norwegian
+  - Shorthair
+  selectedPlayer: 0
 --- !u!212 &696094356
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -2124,6 +2136,12 @@ MonoBehaviour:
   speedController: 0.25
   generationPoint: {fileID: 528921814}
   destructionPoint: {fileID: 155486048}
+  selectedPlayerString:
+  - Player
+  - Bengal
+  - Norwegian
+  - Shorthair
+  selectedPlayer: 0
 --- !u!212 &772139524
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -2636,6 +2654,12 @@ MonoBehaviour:
   speedController: 0.1
   generationPoint: {fileID: 528921814}
   destructionPoint: {fileID: 155486048}
+  selectedPlayerString:
+  - Player
+  - Bengal
+  - Norwegian
+  - Shorthair
+  selectedPlayer: 0
 --- !u!1 &1038846049
 GameObject:
   m_ObjectHideFlags: 0
@@ -2918,6 +2942,12 @@ MonoBehaviour:
   speedController: 0.2
   generationPoint: {fileID: 528921814}
   destructionPoint: {fileID: 155486048}
+  selectedPlayerString:
+  - Player
+  - Bengal
+  - Norwegian
+  - Shorthair
+  selectedPlayer: 0
 --- !u!212 &1073827236
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -3888,7 +3918,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 7.586487, y: -3.8042984}
+  m_AnchoredPosition: {x: 7.586487, y: -3.8042908}
   m_SizeDelta: {x: 482.8614, y: 199.4752}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1388883615
@@ -5217,7 +5247,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!95 &1730242850
 Animator:
   serializedVersion: 5
@@ -5764,7 +5794,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!95 &1890131742
 Animator:
   serializedVersion: 5
@@ -6430,7 +6460,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2145694302}
-  - component: {fileID: 2145694301}
+  - component: {fileID: 2145694303}
+  - component: {fileID: 2145694304}
   m_Layer: 0
   m_Name: SelectedPlayer
   m_TagString: Untagged
@@ -6438,7 +6469,40 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &2145694301
+--- !u!4 &2145694302
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2145694300}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -8.865749, y: 3.686053, z: -0.0015637944}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2145694303
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2145694300}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6422afa7b2868ac43aa25be6012dcc15, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  players:
+  - {fileID: 400668244}
+  - {fileID: 1890131741}
+  - {fileID: 1730242849}
+  - {fileID: 509975980}
+  selectedPlayer: 0
+--- !u!114 &2145694304
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -6456,21 +6520,6 @@ MonoBehaviour:
   - {fileID: 1730242849}
   - {fileID: 509975980}
   selectedPlayer: 0
---- !u!4 &2145694302
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2145694300}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -8.865749, y: 3.686053, z: -0.0015637944}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

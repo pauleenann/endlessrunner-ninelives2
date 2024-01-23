@@ -10,11 +10,19 @@ public class Parallaxing : MonoBehaviour
     public Transform generationPoint;
     public Transform destructionPoint; 
     private ScoreManager theScoreManager;
-
+    [SerializeField]
+    public string[] selectedPlayerString = { "Player", "Bengal", "Norwegian", "Shorthair" };
+    public int selectedPlayer;
 
     void Awake()
     {
-        player = GameObject.Find("Player").GetComponent<PlayerController>();
+        if (PlayerPrefs.HasKey("SelectedPlayer"))
+        {
+            selectedPlayer = PlayerPrefs.GetInt("SelectedPlayer");
+        }
+
+        player = GameObject.Find(selectedPlayerString[selectedPlayer]).GetComponent<PlayerController>();
+        Debug.Log(selectedPlayerString[selectedPlayer]);
     }
 
     void Update()

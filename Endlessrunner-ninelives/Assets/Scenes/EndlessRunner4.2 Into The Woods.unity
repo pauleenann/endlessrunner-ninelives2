@@ -143,7 +143,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!95 &84834351
 Animator:
   serializedVersion: 5
@@ -221,7 +221,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.04909706, y: -0.09578514}
+  m_Offset: {x: -0.04909706, y: -0.059256673}
   m_SpriteTilingProperty:
     border: {x: 0.140625, y: 0.125, z: 0.25, w: 0.3046875}
     pivot: {x: 0.5, y: 0.5}
@@ -232,7 +232,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.8460407, y: 0.80150604}
+  m_Size: {x: 0.8460407, y: 0.7284491}
   m_EdgeRadius: 0
 --- !u!50 &84834354
 Rigidbody2D:
@@ -955,7 +955,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &400668245
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1241,6 +1241,12 @@ MonoBehaviour:
   speedController: 0.1
   generationPoint: {fileID: 528921814}
   destructionPoint: {fileID: 155486048}
+  selectedPlayerString:
+  - Player
+  - Bengal
+  - Norwegian
+  - Shorthair
+  selectedPlayer: 0
 --- !u!1 &428075567
 GameObject:
   m_ObjectHideFlags: 0
@@ -1983,6 +1989,12 @@ MonoBehaviour:
   speedController: 0.2
   generationPoint: {fileID: 528921814}
   destructionPoint: {fileID: 155486048}
+  selectedPlayerString:
+  - Player
+  - Bengal
+  - Norwegian
+  - Shorthair
+  selectedPlayer: 0
 --- !u!212 &696094356
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -2262,6 +2274,12 @@ MonoBehaviour:
   speedController: 0.25
   generationPoint: {fileID: 528921814}
   destructionPoint: {fileID: 155486048}
+  selectedPlayerString:
+  - Player
+  - Bengal
+  - Norwegian
+  - Shorthair
+  selectedPlayer: 0
 --- !u!212 &772139524
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -2629,7 +2647,7 @@ Transform:
   m_GameObject: {fileID: 974222416}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -0.46, z: 0}
+  m_LocalPosition: {x: 0, y: -0.423, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2836,6 +2854,12 @@ MonoBehaviour:
   speedController: 0.1
   generationPoint: {fileID: 528921814}
   destructionPoint: {fileID: 155486048}
+  selectedPlayerString:
+  - Player
+  - Bengal
+  - Norwegian
+  - Shorthair
+  selectedPlayer: 0
 --- !u!1 &1038846049
 GameObject:
   m_ObjectHideFlags: 0
@@ -3118,6 +3142,12 @@ MonoBehaviour:
   speedController: 0.2
   generationPoint: {fileID: 528921814}
   destructionPoint: {fileID: 155486048}
+  selectedPlayerString:
+  - Player
+  - Bengal
+  - Norwegian
+  - Shorthair
+  selectedPlayer: 0
 --- !u!212 &1073827236
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -3660,7 +3690,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!95 &1227148158
 Animator:
   serializedVersion: 5
@@ -4000,7 +4030,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!95 &1253397386
 Animator:
   serializedVersion: 5

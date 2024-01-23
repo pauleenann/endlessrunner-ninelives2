@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SelectedPlayer : MonoBehaviour
+public class SelectedPlayerForNight : MonoBehaviour
 {
     [SerializeField]
     public GameObject[] players;
@@ -15,14 +15,7 @@ public class SelectedPlayer : MonoBehaviour
             selectedPlayer = PlayerPrefs.GetInt("SelectedPlayer");
         }
 
-        // Deactivate all players
-        foreach (GameObject player in players)
-        {
-            player.SetActive(false);
-        }
-
-        // Activate the selected player
         players[selectedPlayer].SetActive(true);
-    }
 
+    }
 }
