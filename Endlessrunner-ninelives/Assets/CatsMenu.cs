@@ -44,6 +44,16 @@ public class CatsMenu : MonoBehaviour
         //PlayerPrefs.DeleteKey("NorwegianPrice");
         //PlayerPrefs.DeleteKey("ShorthairPrice");
 
+        if (PlayerPrefs.HasKey("HighCoin"))
+        {
+            totalCoins = PlayerPrefs.GetInt("HighCoin");
+        }
+
+        if (PlayerPrefs.HasKey("HighFish"))
+        {
+            totalFish = PlayerPrefs.GetInt("HighFish");
+        }
+
         catPrices[1] = bengalPrice;
         catPrices[2] = norwegianPrice;
         catPrices[3] = shorthairPrice;
