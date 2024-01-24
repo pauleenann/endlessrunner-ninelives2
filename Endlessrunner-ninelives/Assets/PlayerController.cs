@@ -34,6 +34,9 @@ public class PlayerController : MonoBehaviour
 
     public GameManager theGameManager;
 
+    public AudioSource jumpSound;
+    public AudioSource deathSound;
+
     private bool jumpingStop;
 
     void Start()
@@ -81,6 +84,7 @@ public class PlayerController : MonoBehaviour
             {
                 myRigidbody.velocity = new Vector2(myRigidbody.velocity.x, jumpForce);
                 jumpingStop = false;
+                jumpSound.Play();
             }
         }
 
@@ -120,6 +124,7 @@ public class PlayerController : MonoBehaviour
             moveSpeed = moveSpeedStore;
             speedMilestoneCount = speedMilestoneCountStore;
             speedIncreaseMilestone = speedIncreaseMilestoneStore;
+            deathSound.Play();
         }
     }
 }
