@@ -9,6 +9,9 @@ public class Points : MonoBehaviour
     Rigidbody2D rb;
     bool hasTarget;
     Vector3 targetPosition;
+    
+   
+    public float speed = 8f;
 
     private ScoreManager theScoreManager;
 
@@ -20,7 +23,7 @@ public class Points : MonoBehaviour
     private void FixedUpdate(){
         if(hasTarget){
             Vector2 targetDirection = (targetPosition - transform.position).normalized;
-            rb.velocity = new Vector2(targetDirection.x, targetDirection.y) * 5f;
+            rb.velocity = new Vector2(targetDirection.x, targetDirection.y) * speed;
         }
     }
 
