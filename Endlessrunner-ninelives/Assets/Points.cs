@@ -40,7 +40,7 @@ public class Points : MonoBehaviour
     //when something enters the trigger tha has a collider
     void OnTriggerEnter2D(Collider2D other)
     {
-        if(other.gameObject.name == "Player")
+        if(other.gameObject.name == "Player" || other.gameObject.name == "Bengal" || other.gameObject.name == "Norwegian" || other.gameObject.name == "Shorthair")
         {
             theScoreManager.AddScore(scoreToGive);
             gameObject.SetActive(false);
