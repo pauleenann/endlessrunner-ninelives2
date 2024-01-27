@@ -2174,6 +2174,39 @@ CanvasRenderer:
   m_GameObject: {fileID: 561533741}
   m_CullTransparentMesh: 1
 --- !u!1 &576365394
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 612706961}
+  m_Layer: 0
+  m_Name: 
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!4 &576365395
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 612706960}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 465982654}
+  - {fileID: 1295294112}
+  - {fileID: 2110856655}
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &612706960
 GameObject:
   m_ObjectHideFlags: 0
@@ -2183,18 +2216,14 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 576365395}
+  - component: {fileID: 612706962}
   m_Layer: 0
   m_Name: SoundEffects
-  - component: {fileID: 612706961}
-  - component: {fileID: 612706962}
-  m_Layer: 9
-  m_Name: CollectorCollider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &576365395
 --- !u!4 &612706961
 Transform:
   m_ObjectHideFlags: 0
@@ -2204,18 +2233,6 @@ Transform:
   m_GameObject: {fileID: 576365394}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 1295294112}
-  - {fileID: 465982654}
-  - {fileID: 2110856655}
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_GameObject: {fileID: 612706960}
-  serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -4088,8 +4105,8 @@ MonoBehaviour:
   groundCheck: {fileID: 1789408079}
   groundCheckRadius: 0.1
   theGameManager: {fileID: 263917524}
-  jumpSound: {fileID: 0}
-  deathSound: {fileID: 0}
+  jumpSound: {fileID: 465982655}
+  deathSound: {fileID: 1295294113}
 --- !u!61 &1089886189
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -5059,8 +5076,8 @@ MonoBehaviour:
   groundCheck: {fileID: 1960575531}
   groundCheckRadius: 0.1
   theGameManager: {fileID: 263917524}
-  jumpSound: {fileID: 0}
-  deathSound: {fileID: 0}
+  jumpSound: {fileID: 465982655}
+  deathSound: {fileID: 1295294113}
 --- !u!61 &1408825513
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -5269,8 +5286,8 @@ MonoBehaviour:
   groundCheck: {fileID: 268612485}
   groundCheckRadius: 0.1
   theGameManager: {fileID: 263917524}
-  jumpSound: {fileID: 0}
-  deathSound: {fileID: 0}
+  jumpSound: {fileID: 465982655}
+  deathSound: {fileID: 1295294113}
 --- !u!61 &1413690780
 BoxCollider2D:
   m_ObjectHideFlags: 0
