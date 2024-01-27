@@ -3642,6 +3642,8 @@ MonoBehaviour:
   groundCheck: {fileID: 1966886314}
   groundCheckRadius: 0.1
   theGameManager: {fileID: 263917524}
+  jumpSound: {fileID: 0}
+  deathSound: {fileID: 0}
 --- !u!95 &995014197
 Animator:
   serializedVersion: 5
@@ -3941,6 +3943,8 @@ MonoBehaviour:
   groundCheck: {fileID: 1789408079}
   groundCheckRadius: 0.1
   theGameManager: {fileID: 263917524}
+  jumpSound: {fileID: 0}
+  deathSound: {fileID: 0}
 --- !u!61 &1089886189
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -4782,6 +4786,8 @@ MonoBehaviour:
   groundCheck: {fileID: 1960575531}
   groundCheckRadius: 0.1
   theGameManager: {fileID: 263917524}
+  jumpSound: {fileID: 0}
+  deathSound: {fileID: 0}
 --- !u!61 &1408825513
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -4990,6 +4996,8 @@ MonoBehaviour:
   groundCheck: {fileID: 268612485}
   groundCheckRadius: 0.1
   theGameManager: {fileID: 263917524}
+  jumpSound: {fileID: 0}
+  deathSound: {fileID: 0}
 --- !u!61 &1413690780
 BoxCollider2D:
   m_ObjectHideFlags: 0
