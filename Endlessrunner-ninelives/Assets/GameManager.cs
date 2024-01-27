@@ -75,8 +75,15 @@ public class GameManager : MonoBehaviour
 
     public void Reset()
     {
-        
 
+        foreach (Image img in lives)
+        {
+            img.sprite = blankLives;
+        }
+        for (int i = 0; i < maxLives; i++)
+        {
+            lives[i].sprite = hasLives;
+        }
         //deathScreen.gameObject.SetActive(false);
 
         //livesText.text = "Lives: " + maxLives;
