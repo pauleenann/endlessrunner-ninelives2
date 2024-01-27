@@ -11,7 +11,7 @@ public class Points : MonoBehaviour
     Vector3 targetPosition;
     
    
-    public float speed = 8f;
+    public float speed = 5f;
 
     private ScoreManager theScoreManager;
 
