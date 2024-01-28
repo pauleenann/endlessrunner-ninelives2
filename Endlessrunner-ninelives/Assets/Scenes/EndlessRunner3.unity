@@ -653,7 +653,7 @@ MonoBehaviour:
   - {fileID: 1408825510}
   - {fileID: 1413690777}
   - {fileID: 1089886186}
-  selectedPlayer: 0
+  selectedPlayer: 2
 --- !u!4 &141211848
 Transform:
   m_ObjectHideFlags: 0
@@ -6403,7 +6403,7 @@ Transform:
   m_GameObject: {fileID: 1862926674}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: -0.08, y: -1.53, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
