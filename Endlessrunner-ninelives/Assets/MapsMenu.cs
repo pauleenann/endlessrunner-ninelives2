@@ -34,7 +34,7 @@ public class MapsMenu : MonoBehaviour
         //kaya kahit iexit mo yung game, then plinay mo ulit, ung maps na binili mo ay malalaro mo pa rin
         nightMapPrice = PlayerPrefs.GetInt("NightMapPrice", 300000);  // Use your default value
         forestMapPrice = PlayerPrefs.GetInt("ForestMapPrice", 100000);  // Use your default value
-
+        //PlayerPrefs.SetInt("HighCoin", 500000);
         //uncomment this kung gusto mo mawala sa playerprefs yung maps na binili mo
         //therefore, kailagan mo ulit siyang bilhin
         //uncomment mo yung dalawa sa taas kung gusto mo sila bilhin ulit HAHA
