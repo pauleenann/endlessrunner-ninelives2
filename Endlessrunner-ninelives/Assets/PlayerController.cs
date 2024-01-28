@@ -37,6 +37,7 @@ public class PlayerController : MonoBehaviour
 
     //private Collider2D myCollider;
 
+
     private Animator myAnimator;
 
     public GameManager theGameManager;
@@ -51,6 +52,7 @@ public class PlayerController : MonoBehaviour
         //search object kung saan tong script nakaattach for the rigidbody2d
         myRigidbody = GetComponent<Rigidbody2D>();
        //myCollider = GetComponent<Collider2D>();
+       //finds the animator kung saan nakaattach tong script
         myAnimator = GetComponent <Animator>();
         jumpTimeCounter = jumpTime;
         //ito ung sinet mo sa unity
@@ -122,6 +124,7 @@ public class PlayerController : MonoBehaviour
             jumpTimeCounter = jumpTime;
         }
 
+        //ito ung gagamitin sa speed at grounded value na nasa animator
         myAnimator.SetFloat("Speed", myRigidbody.velocity.x);
         myAnimator.SetBool("Grounded", grounded);
     }
