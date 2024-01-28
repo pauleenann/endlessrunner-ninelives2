@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -32,51 +33,81 @@ public class GameManager : MonoBehaviour
 
     public GameObject[] playerArray;
 
+    private const string LivesKey = "PlayerLives";
+    private const string LastLifeLostTimeKey = "LastLifeLostTime";
 
     // Start is called before the first frame update
     void Start()
     {
-        platformStartPoint = platformGenerator.position;
-        playerStartPoint = thePlayer.transform.position;
         theScoreManager = FindObjectOfType<ScoreManager>();
         scoreCounter = theScoreManager.scoreCount;
+
+        // Load player data and update UI
+        LoadPlayerData();
+
+        platformStartPoint = platformGenerator.position;
+        playerStartPoint = thePlayer.transform.position;
+
+        // Update the UI to reflect the initial lives count
+        UpdateLivesUI();
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+
     }
 
     public void RestartGame()
     {
-        if(maxLives > 0)
+        if (maxLives > 0)
         {
-          
             maxLives--;
-            
-            //stops scoring
-            theScoreManager.scoreIncreasing = false;
-            //player object will be inactive
-            thePlayer.gameObject.SetActive(false);
-            ////coroutine - runs by itself; you add som time delays
-            //StartCoroutine("RestartGameCo");
+            SavePlayerData(); // Save the updated lives count
+            PlayerPrefs.SetString(LastLifeLostTimeKey, DateTime.Now.ToString()); // Save the time when the life was lost
 
-            //deathScreen.gameObject.SetActive(true);
+            // Update the UI to reflect the lost life
+            UpdateLivesUI();
+
+            theScoreManager.scoreIncreasing = false;
+            thePlayer.gameObject.SetActive(false);
             resumeScreen.gameObject.SetActive(true);
+
+            StartCoroutine(RechargeLifeAfterDelay());
         }
         else
         {
             deathScreen.gameObject.SetActive(true);
         }
-        
-        
+    }
+
+    private void UpdateLivesUI()
+    {
+        Debug.Log("Updating Lives UI. Max Lives: " + maxLives);
+        for (int i = 0; i < lives.Length; i++)
+        {
+            if (i < maxLives)
+            {
+                lives[i].sprite = hasLives;
+            }
+            else
+            {
+                lives[i].sprite = blankLives;
+            }
+        }
+    }
+
+    private IEnumerator RechargeLifeAfterDelay()
+    {
+        yield return new WaitForSeconds(60f); // Wait for 60 seconds
+
+        // Recharge one life after the delay
+        maxLives = Mathf.Min(maxLives + 1, 9); // Cap the lives at 9
+        SavePlayerData(); // Save the updated lives count
     }
 
     public void Reset()
     {
-        
-
         //deathScreen.gameObject.SetActive(false);
 
         //livesText.text = "Lives: " + maxLives;
@@ -132,27 +163,40 @@ public class GameManager : MonoBehaviour
         thePlayer.gameObject.SetActive(true);
     }
 
-    /*public IEnumerator RestartGameCo()
+    private void LoadPlayerData()
     {
-        //stops scoring
-        theScoreManager.scoreIncreasing = false;
-        //player object will be inactive
-        thePlayer.gameObject.SetActive(false);
-        //adds delay to ur coroutine
-        yield return new WaitForSeconds(0.5f);
-        platformList = FindObjectsOfType<PlatformDestroyer>();
-
-        for(int i = 0; i < platformList.Length; i++)
+        if (PlayerPrefs.HasKey(LivesKey))
         {
-            //makes object invisible
-            platformList[i].gameObject.SetActive(false);
+            maxLives = PlayerPrefs.GetInt(LivesKey);
+
+            // Update the UI to reflect the loaded lives count
+            UpdateLivesUI();
+        }
+        else
+        {
+            maxLives = 9; // Initial lives count
+            SavePlayerData(); // Save initial lives count only if there is no saved data
         }
 
-        thePlayer.transform.position = playerStartPoint;
-        platformGenerator.position = platformStartPoint;
-        thePlayer.gameObject.SetActive(true);
+        if (PlayerPrefs.HasKey(LastLifeLostTimeKey))
+        {
+            string lastLifeLostTimeString = PlayerPrefs.GetString(LastLifeLostTimeKey);
+            DateTime lastLifeLostTime = DateTime.Parse(lastLifeLostTimeString);
+            TimeSpan timePassed = DateTime.Now - lastLifeLostTime;
 
-        theScoreManager.scoreCount = 0;
-        theScoreManager.scoreIncreasing = true;
-    }*/
+            int secondsPassed = (int)timePassed.TotalSeconds;
+            if (secondsPassed >= 60)
+            {
+                maxLives += secondsPassed / 60; // Recharge one life for every 60 seconds passed
+                maxLives = Mathf.Min(maxLives, 9); // Cap the lives at 9
+                SavePlayerData(); // Save the updated lives count
+            }
+        }
+    }
+
+    private void SavePlayerData()
+    {
+        PlayerPrefs.SetInt(LivesKey, maxLives);
+        PlayerPrefs.Save();
+    }
 }

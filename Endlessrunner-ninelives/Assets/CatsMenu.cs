@@ -34,15 +34,15 @@ public class CatsMenu : MonoBehaviour
 
     void Start()
     {
-        bengalPrice = PlayerPrefs.GetInt("BengalPrice", 100);
-        norwegianPrice = PlayerPrefs.GetInt("NorwegianPrice", 150);
-        shorthairPrice = PlayerPrefs.GetInt("ShorthairPrice", 200);
-        selectedPlayer = PlayerPrefs.GetInt("SelectedPlayer", 0);
+        //bengalPrice = PlayerPrefs.GetInt("BengalPrice", 100);
+        //norwegianPrice = PlayerPrefs.GetInt("NorwegianPrice", 150);
+        //shorthairPrice = PlayerPrefs.GetInt("ShorthairPrice", 200);
+        //selectedPlayer = PlayerPrefs.GetInt("SelectedPlayer", 0);
         //reset changes
-        //PlayerPrefs.DeleteKey("SelectedPlayer");
-        //PlayerPrefs.DeleteKey("BengalPrice");
-        //PlayerPrefs.DeleteKey("NorwegianPrice");
-        //PlayerPrefs.DeleteKey("ShorthairPrice");
+        PlayerPrefs.DeleteKey("SelectedPlayer");
+        PlayerPrefs.DeleteKey("BengalPrice");
+        PlayerPrefs.DeleteKey("NorwegianPrice");
+        PlayerPrefs.DeleteKey("ShorthairPrice");
 
         if (PlayerPrefs.HasKey("HighCoin"))
         {
