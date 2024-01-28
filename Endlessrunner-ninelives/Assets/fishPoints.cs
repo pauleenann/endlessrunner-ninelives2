@@ -12,7 +12,10 @@ public class fishPoints : MonoBehaviour
 
     private ScoreManager theScoreManager;
 
-      private void Awake(){
+    [SerializeField]
+    public AudioSource pointSound;
+
+    private void Awake(){
         rb = GetComponent<Rigidbody2D>();
     }
 
@@ -50,6 +53,8 @@ public class fishPoints : MonoBehaviour
         {
             theScoreManager.AddFish(scoreToGive);
             gameObject.SetActive(false);
+            pointSound.Play();
+
         }
     }
 }

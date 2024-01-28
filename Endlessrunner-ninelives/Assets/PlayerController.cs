@@ -4,11 +4,15 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
+    //gaano kabilis
     public float moveSpeed;
     private float moveSpeedStore;
+    //multiplies increasing speed over time
     public float speedMultiplier;
 
+    //distance at which the player's speed increases
     public float speedIncreaseMilestone;
+    //Keeps track of the distance covered by the player.
     private float speedIncreaseMilestoneStore;
 
     private float speedMilestoneCount;
@@ -20,10 +24,13 @@ public class PlayerController : MonoBehaviour
     public float jumpTime;
     private float jumpTimeCounter;
 
+
     private Rigidbody2D myRigidbody;
 
+    //checks if player is grounded
     public bool grounded;
     //determines what is ground
+    //katulad sa layers
     public LayerMask whatIsGround;
     public Transform groundCheck;
     public float groundCheckRadius;
@@ -41,6 +48,7 @@ public class PlayerController : MonoBehaviour
 
     void Start()
     {
+        //search object kung saan tong script nakaattach for the rigidbody2d
         myRigidbody = GetComponent<Rigidbody2D>();
        //myCollider = GetComponent<Collider2D>();
         myAnimator = GetComponent <Animator>();
@@ -75,13 +83,17 @@ public class PlayerController : MonoBehaviour
 
         //velocity is the player's speed
         //vector2 - x and y values (x,y)
+        //ito yung magpapaforward sa player
         myRigidbody.velocity = new Vector2(moveSpeed, myRigidbody.velocity.y);
 
         //if any input is taken and its "space"
         if (Input.GetKeyDown(KeyCode.Space) || Input.GetMouseButtonDown(0))
         {
+            //if not grounded, player will not jump
             if (grounded)
             {
+                //this will make the player jump
+                //change gravity in unity if you want player to fall a little bit faster
                 myRigidbody.velocity = new Vector2(myRigidbody.velocity.x, jumpForce);
                 jumpingStop = false;
                 jumpSound.Play();

@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class CameraController : MonoBehaviour
 {
+    //finds the player 
+    //player object has a playercontroler script
     public PlayerController thePlayer;
 
     //(x,y,z)
@@ -13,7 +15,9 @@ public class CameraController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        //theplayer's value will be the object that has the playercontroller script
         thePlayer = FindObjectOfType<PlayerController>();
+        //assigns the position of theplayer in lastplayervalue
         lastPlayerPosition = thePlayer.transform.position;
 
     }

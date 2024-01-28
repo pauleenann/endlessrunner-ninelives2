@@ -11,6 +11,9 @@ public class Points : MonoBehaviour
     Vector3 targetPosition;
 
     private ScoreManager theScoreManager;
+    [SerializeField]
+    public AudioSource pointSound;
+
 
 
     private void Awake(){
@@ -44,6 +47,7 @@ public class Points : MonoBehaviour
         {
             theScoreManager.AddScore(scoreToGive);
             gameObject.SetActive(false);
+            pointSound.Play();
         }
     }
 }

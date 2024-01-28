@@ -8,6 +8,7 @@ public class ObjectPooler : MonoBehaviour
     //number of objects na iinitiate once game is played
     public int pooledAmount;
     //list of gameobjects; 
+    //to store pooled objects
     List<GameObject> pooledObjects;
     
     // Start is called before the first frame update
@@ -23,7 +24,7 @@ public class ObjectPooler : MonoBehaviour
             obj.SetActive(false);
             //add object to list
             pooledObjects.Add(obj);
-            Debug.Log(pooledObjects.Count);     
+            Debug.Log("pooledobjectscount: " +pooledObjects.Count);     
         }
     }
 
