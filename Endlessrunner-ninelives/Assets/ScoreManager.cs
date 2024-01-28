@@ -27,8 +27,11 @@ public class ScoreManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        PlayerPrefs.SetInt("HighCoin", 500000);
+        PlayerPrefs.SetFloat("HighScore", 0);
+        
         //shows highscore in the previous game
-        if(PlayerPrefs.HasKey("HighScore"))
+        if (PlayerPrefs.HasKey("HighScore"))
         {
             highScoreCount = PlayerPrefs.GetFloat("HighScore");
         }
